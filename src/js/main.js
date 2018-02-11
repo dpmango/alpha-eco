@@ -60,7 +60,6 @@ $(document).ready(function(){
     var wHost = window.location.host.toLowerCase()
     var displayCondition = wHost.indexOf("localhost") >= 0 || wHost.indexOf("surge") >= 0
     if (displayCondition){
-      console.log(displayCondition)
       var wWidth = _window.width();
 
       var content = "<div class='dev-bp-debug'>"+wWidth+"</div>";
@@ -85,6 +84,8 @@ $(document).ready(function(){
 
     initPopups();
     initMasks();
+    // svgSetOffset();
+    initScrollMonitor();
     formValidators();
     focusToggler();
 
@@ -409,22 +410,52 @@ $(document).ready(function(){
   // SCROLLMONITOR - WOW LIKE
   ////////////
   function initScrollMonitor(){
-    $('[js-scrollmonitor]').each(function(i, el){
+    svgSetOffset();
+
+    $('.js-scrollmonitor').each(function(i, el){
 
       var elWatcher = scrollMonitor.create( $(el) );
 
-      elWatcher.enterViewport(throttle(function() {
+      elWatcher.fullyEnterViewport(throttle(function() {
         $(el).addClass('is-visible');
+        animateSvg(el)
       }, 100, {
         'leading': true
       }));
-      elWatcher.exitViewport(throttle(function() {
-        $(el).removeClass('is-visible');
-      }, 100));
+      // elWatcher.exitViewport(throttle(function() {
+      //   $(el).removeClass('is-visible');
+      // }, 100));
     });
 
   }
 
+  function svgSetOffset(){
+    var paths = $('.js-scrollmonitor').find('path');
+    paths.each(function(i,path){
+      var $path = $(path);
+      var pathL = Math.floor(path.getTotalLength()) + 1
+      $path.css("stroke-dasharray", pathL)
+      $path.css("stroke-dashoffset", pathL)
+      $path.attr('stroke', '#262e39').attr('stroke-width', .3)
+    })
+  }
+
+  function animateSvg(el, direction){
+    var paths = $(el).find('path');
+    paths.each(function(i,path){
+      var $path = $(path);
+      var pathL = Math.floor(path.getTotalLength()) + 1
+      anime({
+        targets: path,
+        strokeDashoffset: [pathL, 0],
+        easing: 'easeInOutSine',
+        duration: 1000,
+        // delay: function(el, i) { return i * 250 },
+        direction: 'alternate',
+        loop: false
+      });
+    })
+  }
 
   //////////
   // BARBA PJAX
