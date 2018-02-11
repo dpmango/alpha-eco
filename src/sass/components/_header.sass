@@ -1,13 +1,13 @@
 header
   position: relative
-  outline: 1px solid red
+
   width: 100%
   z-index: 1000
   // display: none;
   .fixed-row
     position: fixed
     width: 100%
-    background: $white
+    background: white
     display: flex
     flex-wrap: nowrap
     justify-content: space-between
@@ -40,7 +40,7 @@ header
           display: inline-block
           a
             color: $dark
-            font-family: $medium
+            font-weight: 500
             font-size: 16px
             margin: 0 25px
             display: block
@@ -55,13 +55,13 @@ header
         margin-left: auto
         a.number
           font-size: 21px
-          font-family: $light
+          font-weight: 300
           color: $dark
           margin-right: 20px
         .button
           max-width: 160px
           padding: 10px 15px
-          background: $white
+          background: white
           border-radius: 5px
           -webkit-border-radius: 5px
           border: 1px solid #e7e7e7
@@ -71,7 +71,7 @@ header
           &:hover
             background: $button-green
             border-color: $button-green
-            color: $white
+            color: white
   .static-row
     position: absolute
     margin-top: 80px
@@ -85,8 +85,8 @@ header
         display: inline-block
         padding: 25px 0
         a
-          color: $white
-          font-family: $regular
+          color: white
+          font-weight: 400
           font-size: 16px
           margin: 0 25px
           display: block
