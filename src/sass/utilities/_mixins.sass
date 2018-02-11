@@ -1,0 +1,106 @@
+// width
+=r($width)
+  @media only screen and (max-width: $width+ "px")
+    @content
+
+=rmin($width)
+  @media only screen and (min-width: $width+ "px")
+    @content
+
+// height
+=rh($height)
+  @media only screen and (max-height: $height + "px")
+    @content
+
+=rhmin($height)
+  @media only screen and (min-height: $height + "px")
+    @content
+
+=text-overflow
+  overflow: hidden
+  text-overflow: ellipsis
+  white-space: nowrap
+
+=css3-prefix($property, $value)
+  -webkit-#{$property}: #{$value}
+  -moz-#{$property}: #{$value}
+  -ms-#{$property}: #{$value}
+  -o-#{$property}: #{$value}
+  #{$property}: #{$value}
+
+/// Keyframes
+/// @param {*} $animation-name - Animation name
+/// @content [Animation css]
+=keyframes($animation-name)
+  @-webkit-keyframes #{$animation-name}
+    @content
+
+  @-moz-keyframes #{$animation-name}
+    @content
+
+  @-ms-keyframes #{$animation-name}
+    @content
+
+  @-o-keyframes #{$animation-name}
+    @content
+
+  @keyframes #{$animation-name}
+    @content
+
+/// Background Gradient
+/// @param {Color} $startColor [#3C3C3C] - Start Color
+/// @param {Color} $endColor [#999999] - End Color
+=background-gradient($startColor: #3c3c3c, $endColor: #999999)
+  background-color: $startColor
+  background-image: -webkit-gradient(linear, left top, left bottom, from($startColor), to($endColor))
+  background-image: -webkit-linear-gradient(top, $startColor, $endColor)
+  background-image: -moz-linear-gradient(top, $startColor, $endColor)
+  background-image: -ms-linear-gradient(top, $startColor, $endColor)
+  background-image: -o-linear-gradient(top, $startColor, $endColor)
+  background-image: linear-gradient(top, $startColor, $endColor)
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#{$startColor}', endColorStr='#{$endColor}')
+
+=placeholder-color($color)
+  &::-webkit-input-placeholder
+    color: $color
+  &::-moz-placeholder
+    color: $color
+  /* Firefox 19+
+  &:-moz-placeholder
+    color: $color
+  /* Firefox 18-
+  &:-ms-input-placeholder
+    color: $color
+
+=cf
+  &:before,
+  &:after
+    display: table
+    content: ''
+  &:after
+    clear: both
+
+=clearafter
+  &:after
+    display: table
+    clear: both
+    content: ''
+
+=transform($string)
+  -webkit-transform: $string
+  -moz-transform: $string
+  -ms-transform: $string
+  -o-transform: $string
+  transform: $string
+
+=transition($string)
+  -webkit-transition: $string
+  -moz-transition: $string
+  -ms-transition: $string
+  -o-transition: $string
+  transition: $string
+
+=bs
+  -webkit-box-sizing: border-box
+  -moz-box-sizing: border-box
+  box-sizing: border-box

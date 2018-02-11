@@ -1,0 +1,19 @@
+ProjectTitle: Project-name
+
+PageList:
+- file: homepage.html
+  ready: 80
+- file: expertise.html
+  ready: 80
+- file: hawle.html
+  ready: 80
+- file: spisanie.html
+  ready: 80
+- file: standarts.html
+  ready: 80
+- file: teh-exprtise.html
+  ready: 80
+- file: utilization-b.html
+  ready: 80
+- file: utilization.html
+  ready: 80

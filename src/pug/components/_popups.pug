@@ -1,0 +1,89 @@
+#question-popup.white-popup.mfp-hide
+  h3 Задайте вопрос и мы Вам перезвоним
+  form.form-validation(action='send.php', method='post')
+    input(type='text', placeholder='Ваше имя', name='name')
+    .phone-container
+      input(type='text', name='phone', placeholder='Ваш номер телефона', required='')
+    textarea(placeholder='Ваш вопрос', name='question-info')
+    label.container-checkbox
+      | Согласен на обработку 
+      a(href='pdf.pdf', target='_blank') персональных данных
+      input(type='checkbox', checked='checked', name='personal-info')
+      span.checkmark
+    .box
+      input#file-2.inputfile.inputfile-2(type='file', name='file-2[]', data-multiple-caption='{count} files selected', multiple='')
+      label(for='file-2')
+        span прикрепить файл
+    button.button(type='submit') Оставить заявку
+#call-popup1.white-popup.mfp-hide
+  h3 Оставьте свои данные и мы Вам перезвоним
+  form.form-validation(action='send.php', method='post')
+    input(type='text', name='name', placeholder='Ваше имя')
+    .phone-container
+      input(type='text', name='phone', placeholder='Ваш номер телефона', required='')
+    textarea(placeholder='Ваш вопрос', name='question-info')
+    label.container-checkbox
+      | Согласен на обработку 
+      a(href='pdf.pdf', target='_blank') персональных данных
+      input(type='checkbox', checked='checked', name='personal-info')
+      span.checkmark
+    button.button(type='submit') Оставить заявку
+#application-popup.white-popup.mfp-hide
+  h3 Оставьте заявку
+  form.form-validation(action='send.php', method='post')
+    input(type='text', placeholder='Ваше имя', name='name')
+    input(type='text', placeholder='Ваш e-mail')
+    .phone-container
+      input(type='text', name='phone', placeholder='Ваш номер телефона', required='')
+    textarea(placeholder='Ваш вопрос', name='question-info')
+    label.container-checkbox
+      | Согласен на обработку 
+      a(href='pdf.pdf', target='_blank') персональных данных
+      input(type='checkbox', checked='checked', name='personal-info')
+      span.checkmark
+    button.button(type='submit') Оставить заявку
+#fiz-popup.white-popup.mfp-hide
+  h3 Оставьте заявку на утилизацию
+  form.form-validation(action='send.php', method='post')
+    input(type='text', placeholder='Ваше имя', name='name')
+    input(type='text', placeholder='Ваш e-mail')
+    .phone-container
+      input(type='text', name='phone', placeholder='Ваш номер телефона', required='')
+    textarea(placeholder='Ваш комментарий', name='question-info')
+    label.container-checkbox
+      | Согласен на обработку 
+      a(href='pdf.pdf', target='_blank') персональных данных
+      input(type='checkbox', checked='checked', name='personal-info')
+      span.checkmark
+    .box
+      input#file-2.inputfile.inputfile-2(type='file', name='file-2[]', data-multiple-caption='{count} files selected', multiple='')
+      label(for='file-2')
+        span прикрепить файл
+    button.button(type='submit') Оставить заявку
+#jur-popup.white-popup.mfp-hide
+  h3 Оставьте заявку на утилизацию
+  form.form-validation(action='send.php', method='post')
+    input(type='text', placeholder='Ваше имя', name='name')
+    input(type='text', placeholder='Ваш e-mail')
+    .phone-container
+      input(type='text', name='phone', placeholder='Ваш номер телефона', required='')
+    input(type='text', placeholder='example.com')
+    input(type='text', placeholder='ИНН')
+    textarea(placeholder='Ваш комментарий', name='question-info')
+    label.container-checkbox
+      | Согласен на обработку 
+      a(href='pdf.pdf', target='_blank') персональных данных
+      input(type='checkbox', checked='checked', name='personal-info')
+      span.checkmark
+    .box
+      input#file-2.inputfile.inputfile-2(type='file', name='file-2[]', data-multiple-caption='{count} files selected', multiple='')
+      label(for='file-2')
+        span прикрепить файл
+    button.button(type='submit') Оставить заявку
+#thankPopup.white-popup.mfp-hide
+  .popup__grid
+    img(src='images/ok-popup.png', alt='')
+    .popup__info
+      h3 Спасибо
+      p Ваша заявка отправлена!
+  a.button.mfp-close(href='#') Продолжить

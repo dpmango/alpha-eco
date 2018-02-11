@@ -1,0 +1,96 @@
+header
+  position: relative
+  outline: 1px solid red
+  width: 100%
+  z-index: 1000
+  // display: none;
+  .fixed-row
+    position: fixed
+    width: 100%
+    background: $white
+    display: flex
+    flex-wrap: nowrap
+    justify-content: space-between
+    min-height: 80px
+    top: 0
+    z-index: 2
+    .logo-container
+      background: #161e21
+      display: flex
+      justify-content: center
+      align-items: center
+      // max-width: 345px;
+      // width: 30%;
+      padding: 5px
+    .middle-container
+      width: 100%
+      display: flex
+      justify-content: space-between
+      border-bottom: 1px solid #e7e7e7
+      flex-wrap: wrap
+      align-content: center
+      padding: 15px 0
+      ul.menu-links
+        text-align: left
+        display: flex
+        align-items: center
+        margin-bottom: 2px
+        margin-top: 5px
+        li
+          display: inline-block
+          a
+            color: $dark
+            font-family: $medium
+            font-size: 16px
+            margin: 0 25px
+            display: block
+            &:hover
+              color: $green
+      .phone-container
+        display: flex
+        max-width: 360px
+        width: 100%
+        align-items: center
+        padding-right: 10px
+        margin-left: auto
+        a.number
+          font-size: 21px
+          font-family: $light
+          color: $dark
+          margin-right: 20px
+        .button
+          max-width: 160px
+          padding: 10px 15px
+          background: $white
+          border-radius: 5px
+          -webkit-border-radius: 5px
+          border: 1px solid #e7e7e7
+          color: $dark
+          &:before
+            display: none
+          &:hover
+            background: $button-green
+            border-color: $button-green
+            color: $white
+  .static-row
+    position: absolute
+    margin-top: 80px
+    z-index: 1
+    width: 100%
+    ul.menu-links
+      text-align: right
+      display: flex
+      justify-content: flex-end
+      li
+        display: inline-block
+        padding: 25px 0
+        a
+          color: $white
+          font-family: $regular
+          font-size: 16px
+          margin: 0 25px
+          display: block
+          &:hover
+            text-decoration: underline
+  .mobile-row
+    display: none
