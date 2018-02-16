@@ -1,0 +1,36 @@
+---
+title: contacts
+wrapperClass: global_wrapper
+---
+extends shared/_layout
+block content
+
+  // Begin wrapper-main
+  .head-block.head-block--custom.head-block--standarts
+    .container
+      ul.index-page
+        li
+          a(href='#') Главная
+        li
+          a(href='#') Утилизация бытовой техники
+      h1
+        span
+          | Контакты
+  .wrapper-main.w-oh
+    .map
+      .container.container--full.w-oh
+        .map__container
+          .map__grid
+            .map__item
+              p.map__pre-info Городской:
+              a.map__link-phone(href='tel:84742517918') 8 (4742) 517-918
+            .map__item
+              p.map__pre-info Сотовый:
+              a.map__link-phone(href='tel:89107390508') 8-910-739-05-08
+            .map__item
+              p.map__pre-info Электронная почта:
+              a.map__link-mail(href='mailto:info@Alfa-eco.pro') info@Alfa-eco.pro
+            .map__item
+              p.map__pre-info Адрес:
+              p.map__item--info Россия, 398008, г. Липецк, ул. Октябрьская, д. 22
+          iframe(src='https://snazzymaps.com/embed/48706' width='100%' height='600px' style='border:none;')

@@ -19,7 +19,7 @@ block content
       p
         | ООО «НПО «Альфа-Эко» проводит экспертизу и осуществляет оценку содержания драгоценных металлов в оборудовании с соблюдением требований и предоставлением надлежащей документации.
   .wrapper-main
-    .advantages
+    .advantages.advantages--expertise
       .container.container--full.w-oh
         .container.w-oh
           p.advantages__head
@@ -27,24 +27,24 @@ block content
           .advantages__grid
             .advantages__item
               .advantages__image
-                img(src='http://via.placeholder.com/55x55', alt='')
+                +icon('ico-docs')
               p.advantages__info
                 | Федеральный закон от 26.03.1998 № 41-ФЗ "О драгоценных металлах и драгоценных камнях" (далее - Закон о драгметаллах).
             .advantages__item
               .advantages__image
-                img(src='http://via.placeholder.com/55x55', alt='')
+                +icon('ico-docs')
               p.advantages__info
                 | Инструкция о порядке учета и хранения драгоценных металлов, драгоценных камней, продукции из них и ведения отчетности при их производстве, использовании и обращении. Утверждена приказом Минфина России от 09.12.2016 № 231н
             .advantages__item
               .advantages__image
-                img(src='http://via.placeholder.com/55x55', alt='')
+                +icon('ico-docs')
               p.advantages__info
                 | Правила учета и хранения драгоценных металлов, драгоценных камней и продукции из них, а также ведения соответствующей отчетности. Утверждены постановлением Правительства РФ от 28.09.2000 № 731.
             .advantages__item
               p.advantages__info--title ст. 20
               p.advantages__info
                 | В соответствие с требованиями статьи 20 Закона о драгметаллах - лом и отходы драгоценных металлов подлежат сбору и учету во всех предприятиях (организациях).
-    .important
+    .important.important--expertise
       .container
         h3 Важно!
         p
@@ -57,23 +57,25 @@ block content
             p
               | Ваша организация собирается списать с баланса и утилизировать устаревшее оборудование, но учет драгоценных металлов не велся? Техническая документация, где указывалось бы содержание драгметаллов, отсутствует?
             a.button.open-popup-link(href='#question-popup') Задать вопрос
-    .container.container--full.pre-footer
-      .pre-footer__grid
-        .pre-footer__item
-          h3
-            | Стоимость экспертизы (оформления экспертного заключения о содержании драгоценных металлов) 
-            span составляет от 150 рублей
-            |  (с учетом НДС 18%) за одну единицу оборудования.
-          .pre-footer__grid
-            .pre-footer__text
-              p.pre-footer__info-p
-                | После проведения фактической утилизации Вашего оборудования мы можем возместить Вашей компании стоимость извлеченных драгоценных металлов (за вычетом стоимости работ по извлечению этих драгметаллов).
-        .pre-footer__item
-          h3 Ждем Ваших заявок и вопросов по телефонам
-          p.pre-footer__info
-            | 8 (4742)517-918 или пришлите нам заявку на электронную почту 
-            a(href='mailto:info@alfa-eco.pro') info@alfa-eco.pro
-          .cf
-          .button-container
-            a.button.open-popup-link(href='#question-popup') Оставить заявку
-            p.button-info Получите бесплатную консультацию.
+    .pre-footer.pre-footer--editable
+      .container.container--full
+        .pre-footer__grid
+          .pre-footer__item.pre-footer__item--ml10
+            h3
+              | Стоимость экспертизы (оформления экспертного заключения о содержании драгоценных металлов) 
+              span составляет от 150 рублей
+              |  (с учетом НДС 18%) за одну единицу оборудования.
+            .pre-footer__grid
+              .pre-footer__text
+                p.pre-footer__info-p
+                  | После проведения фактической утилизации Вашего оборудования мы можем возместить Вашей компании стоимость извлеченных драгоценных металлов (за вычетом стоимости работ по извлечению этих драгметаллов).
+          .pre-footer__item
+            h3 Ждем Ваших заявок и вопросов по телефонам
+            p.pre-footer__info
+              a(href='tel:84742517918') 8 (4742)517-918 
+              | или пришлите нам заявку на электронную почту 
+              a(href='mailto:info@alfa-eco.pro') info@alfa-eco.pro
+            .cf
+            .button-container
+              a.button.open-popup-link(href='#question-popup') Оставить заявку
+              p.button-info Получите бесплатную консультацию.

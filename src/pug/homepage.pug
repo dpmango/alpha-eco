@@ -37,82 +37,81 @@ block content
             p.flex-container__info
               | Консультирование в специфических областях права, а также по проведению мероприятий с использованием сведений, составляющих государственную тайну, по уничтожению информации, учету драгоценных металлов и отчетности;
             p.flex-container__number 04
-    .container.container--full.utilization
-      .container
+    .container.container--full.utilization.w-oh
+      .container.w-oh
         h2 Переработка и утилизация
         .flex-container
           .flex-container__item
             a(href='#')
               .flex-container__image
-                img(src='http://via.placeholder.com/55x55', alt='')
+                +icon('ico-barcode')
               p.flex-container__info Шифровальная аппаратура
           .flex-container__item
             a(href='#')
               .flex-container__image
-                img(src='http://via.placeholder.com/55x55', alt='')
+                +icon('ico-w-machine')
               p.flex-container__info Бытовая техника
           .flex-container__item
             a(href='#')
               .flex-container__image
-                img(src='http://via.placeholder.com/55x55', alt='')
+                +icon('ico-print')
               p.flex-container__info Оргтехника
           .flex-container__item
             a(href='#')
               .flex-container__image
-                img(src='http://via.placeholder.com/55x55', alt='')
+                +icon('ico-pc')
               p.flex-container__info Электронно-вычислительные машины (ЭВМ)
         .flex-container
           .flex-container__item
             a(href='#')
               .flex-container__image
-                img(src='http://via.placeholder.com/55x55', alt='')
+                +icon('ico-key')
               p.flex-container__info Устройства сбора и ввода информации
           .flex-container__item
             a(href='#')
               .flex-container__image
-                img(src='http://via.placeholder.com/55x55', alt='')
+                +icon('ico-flash')
               p.flex-container__info Носители информации, содержащие служебную тайну
           .flex-container__item
             a(href='#')
               .flex-container__image
-                img(src='http://via.placeholder.com/55x55', alt='')
+                +icon('ico-military')
               p.flex-container__info Военная техника
           .flex-container__item
             a(href='#')
               .flex-container__image
-                img(src='http://via.placeholder.com/55x55', alt='')
+                +icon('ico-magnet')
               p.flex-container__info Другие устройства, содержащие драгоценные и редкие металлы
         .utilization__links
           p.utilization__title Оставить заявку на утилизацию
           .utilization__flex
             a.button.utilization__link.open-popup-link(href='#fiz-popup') Для физических лиц
             a.button.utilization__link.open-popup-link(href='#jur-popup') Для юридических лиц
-    .container.container--full.advantages.w-oh
+    .container.container--full.advantages.advantages--main.w-oh
       .container
         h2 Преимущества сотрудничества с «Альфа-Эко»
         ul
           li
             .image-container
-              img(src='http://via.placeholder.com/55x55', alt='')
+              +icon('ico-like')
             p Выполняем работу максимально эффективно и оперативно
           li
             .image-container
-              img(src='http://via.placeholder.com/55x55', alt='')
+              +icon('ico-certificate')
             p Ведем лицензионную деятельность. Есть все документы и разрешения
           li
             .image-container
-              img(src='http://via.placeholder.com/55x55', alt='')
+              +icon('ico-circle')
             p
               | Производственные линии по последним европейским стандартам экологической безопасности
           li
             .image-container
-              img(src='http://via.placeholder.com/55x55', alt='')
+              +icon('ico-docs')
             p Предоставляем полную отчетность организациям, фото-документирование
           li
             .image-container
-              img(src='http://via.placeholder.com/55x55', alt='')
+              +icon('ico-recycle')
             p Безотходное производство. Остается менее 2% шлака. Заботимся об экологии.
-      //- img.recycle-image(src='images/recycle-2.png', alt='')
       include ../inline-svg/min/logo-a.svg
     .container.container--full.we-propose
       .container
@@ -142,29 +141,29 @@ block content
       h2 Как мы работаем
       .how-we-work__grid
         .how-we-work__item
-          img(src='http://via.placeholder.com/55x55', alt='')
+          +icon('ico-phone')
           p Вы звоните или оставляете заявку на сайте
           p.number 01
         .how-we-work__item
-          img(src='http://via.placeholder.com/55x55', alt='')
+          +icon('ico-eye')
           p Мы проводим обследование объекта
           p.number 02
         .how-we-work__item
-          img(src='http://via.placeholder.com/55x55', alt='')
+          +icon('ico-time')
           p Утверждаем график вывоза и сроки на утилизацию
           p.number 03
         .how-we-work__item
-          img(src='http://via.placeholder.com/55x55', alt='')
+          +icon('ico-contract')
           p Заключаем договор и составляем акт списания нерабочей аппаратуры
           p.number 04
         .how-we-work__item
-          img(src='http://via.placeholder.com/55x55', alt='')
+          +icon('ico-ok')
           p
             | Утилизируем или перерабатываем отходы и предоставляем сопроводительную документацию.
           p.number 05
     .container.container--full.pre-footer
       .pre-footer__grid
-        .pre-footer__item
+        .pre-footer__item.pre-footer__item--editable
           h3 Важно знать
           p
             | Электронная техника должна утилизироваться в соответствии с “Методикой проведения работ по комплексной утилизации вторичных драгоценных металлов из отработанных средств вычислительной техники”, утвержденной Государственным Комитетом РФ по телекоммуникациям от 19 октября 1999г. Неправильная утилизация оборудования и техники, то есть простой вынос их на свалку бытовых отходов, существенно загрязняет окружающую среду, а также является нарушением нормативных актов.

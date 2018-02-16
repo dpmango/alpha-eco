@@ -36,25 +36,25 @@ block content
         .teh-steps__grid
           .teh-steps__item
             .teh-steps__image
-              img(src='http://via.placeholder.com/55x55', alt='')
+              +icon('ico-certificate')
             p.teh-steps__info Подготовка Заказчиком перечня основных средств.
             .teh-steps__number 01
           .teh-steps__item
             .teh-steps__image
-              img(src='http://via.placeholder.com/55x55', alt='')
+              +icon('ico-ok')
             p.teh-steps__info Подготовка Заказчиком перечня основных средств.
             .teh-steps__number 02
           .teh-steps__item
             .teh-steps__image
-              img(src='http://via.placeholder.com/55x55', alt='')
+              +icon('ico-check')
             p.teh-steps__info Подготовка Заказчиком перечня основных средств.
             .teh-steps__number 03
           .teh-steps__item
             .teh-steps__image
-              img(src='http://via.placeholder.com/55x55', alt='')
+              +icon('ico-check-list')
             p.teh-steps__info Подготовка Заказчиком перечня основных средств.
             .teh-steps__number 04
-          .teh-steps__item.teh-steps__item--last-child
+          .teh-steps__item.teh-steps__item--last-child.teh-steps__item--editable
             h3 Срок подготовки документов и исполнения заказа в ООО «НПО «Альфа-Эко»
             .teh-steps__edit-info
               p.teh-steps__info.teh-steps__info--days 2-3
@@ -69,49 +69,55 @@ block content
           .examples__grid
             a.examples__item(href='#')
               .examples__image
-                img(src='http://via.placeholder.com/55x55', alt='')
+                +icon('ico-empty-doc')
               p.examples__info Договор на оказание услуг
             a.examples__item(href='#')
               .examples__image
-                img(src='http://via.placeholder.com/55x55', alt='')
+                +icon('ico-empty-doc')
               p.examples__info Спецификация (Протокол согласования договорной цены)
             a.examples__item(href='#')
               .examples__image
-                img(src='http://via.placeholder.com/55x55', alt='')
+                +icon('ico-empty-doc')
               p.examples__info Акты дефектации (на каждый инвентарный номер) Акт технической экспертизы
             a.examples__item(href='#')
               .examples__image
-                img(src='http://via.placeholder.com/55x55', alt='')
+                +icon('ico-empty-doc')
               p.examples__info Сертификаты экспертов-техников, проводивших техническую экспертизу
     .examples.examples--editable
       .container
-        .examples__grid
+        .examples__grid.examples__grid--utilization
           a.examples__item.examples__item--editable(href='#')
             .examples__image
-              img(src='http://via.placeholder.com/55x55', alt='')
-            p.examples__info Договор на оказание услуг
+              +icon('ico-empty-doc')
+            p.examples__info Сертификат соответствия
           a.examples__item.examples__item--editable(href='#')
             .examples__image
-              img(src='http://via.placeholder.com/55x55', alt='')
-            p.examples__info Спецификация (Протокол согласования договорной цены)
+              +icon('ico-empty-doc')
+            p.examples__info Акт выполненных работ
           a.examples__item.examples__item--editable(href='#')
             .examples__image
-              img(src='http://via.placeholder.com/55x55', alt='')
-            p.examples__info Акты дефектации (на каждый инвентарный номер) Акт технической экспертизы
+              +icon('ico-empty-doc')
+            p.examples__info Счет на оплату
     .container.container--full.pre-footer.pre-footer--editable
       .pre-footer__grid
         .pre-footer__item
-          h2 Закажите техническую экспертизу техники от ООО «НПО «Альфа-Эко»
+          h2.title-nomargin Закажите техническую экспертизу техники от ООО «НПО «Альфа-Эко»
           .pre-footer__grid
             .pre-footer__text
               p.pre-footer__info-p
                 | Вы поможем Вам правильно всего за 2-3 дня осуществить техническую экспертизу техники. Специалист приедет к Вам в офис, оформит все необходимые документы и проконсультирует должностных лиц о том, как правильно оформить списание техники на основании наших отчетных документов.
               p.pre-footer__info-p
-                | Если Вам нужна надежная компания для проведения технической экспертизы техники и  профессиональное оформление надлежащей документации, то обращайтесь в ООО «НПО «Альфа-Эко» по телефону: 8 (4742)517-918,  8 (980)357-35-07 или пришлите нам заявку на электронную почту alfa-eco48@bk.ru
+                | Если Вам нужна надежная компания для проведения технической экспертизы техники и  профессиональное оформление надлежащей документации, то обращайтесь в ООО «НПО «Альфа-Эко» по телефону:
+                a(href='tel:84742517918') 8 (4742)517-918
+                |, 
+                a(href='tel:89803573507') 8 (980)357-35-07 
+                | или пришлите нам заявку на электронную почту 
+                a(href='mailto:alfa-eco48@bk.ru') alfa-eco48@bk.ru
         .pre-footer__item
           h3 Ждем Ваших заявок и вопросов по телефонам
           p.pre-footer__info
-            | 8 (4742)517-918 или пришлите нам заявку на электронную почту 
+            a(href='tel:84742517918') 8 (4742)517-918 
+            | или пришлите нам заявку на электронную почту 
             a(href='mailto:info@alfa-eco.pro') info@alfa-eco.pro
           .cf
           .button-container

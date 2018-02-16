@@ -59,6 +59,15 @@
   background-image: -o-linear-gradient(top, $startColor, $endColor)
   background-image: linear-gradient(top, $startColor, $endColor)
   filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#{$startColor}', endColorStr='#{$endColor}')
+=background-gradient-radial($startColor: #3c3c3c, $endColor: #999999)
+  background-color: $startColor
+  background-image: -webkit-gradient(linear, left top, left bottom, from($startColor), to($endColor))
+  background-image: -webkit-linear-gradient(top, $startColor, $endColor)
+  background-image: -moz-linear-gradient(top, $startColor, $endColor)
+  background-image: -ms-linear-gradient(top, $startColor, $endColor)
+  background-image: -o-linear-gradient(top, $startColor, $endColor)
+  background-image: linear-gradient(top, $startColor, $endColor)
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#{$startColor}', endColorStr='#{$endColor}')
 
 =placeholder-color($color)
   &::-webkit-input-placeholder

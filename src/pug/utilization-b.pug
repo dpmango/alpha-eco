@@ -24,27 +24,27 @@ block content
         ul
           li
             .image-container
-              img(src='http://via.placeholder.com/55x55', alt='')
+              +icon('ico-like')
             h3 Безотходное производство –
             p забота о близких и предотвращение экологической катастрофы
           li
             .image-container
-              img(src='http://via.placeholder.com/55x55', alt='')
+              +icon('ico-second')
             h3 Оперативно –
             p
               | приедем в удобное для Вас время, возможен вывоз в день обращения, срок утилизации до 10-ти рабочих дней
           li
             .image-container
-              img(src='http://via.placeholder.com/55x55', alt='')
+              +icon('ico-certificate')
             h3 Выгодно –
             p
               | Вы списываете с баланса старую технику, чтобы не платить за нее налог, с соблюдением закона «Об отходах производства и потребления»
           li
             .image-container
-              img(src='http://via.placeholder.com/55x55', alt='')
+              +icon('ico-truck')
             h3 Демонтаж –
             p самостоятельно произведем демонтаж, отключим и вынесем технику
-      img.recycle-image(src='images/recycle-2.png', alt='')
+      include ../inline-svg/min/logo-a.svg
     .advantages.advantages--utilization
       .container.container--full
         .container
@@ -53,26 +53,26 @@ block content
           .advantages__grid
             .advantages__item
               .advantages__image
-                img(src='http://via.placeholder.com/55x55', alt='')
+                +icon('ico-tv')
               p.advantages__info Моральное старение бытовой техники
             .advantages__item
               .advantages__image
-                img(src='http://via.placeholder.com/55x55', alt='')
+                +icon('ico-garbage')
               p.advantages__info Потеря практической надобности в ее эксплуатации
             .advantages__item
               .advantages__image
-                img(src='http://via.placeholder.com/55x55', alt='')
+                +icon('ico-attention')
               p.advantages__info Выход из строя
             .advantages__item
               .advantages__image
-                img(src='http://via.placeholder.com/55x55', alt='')
+                +icon('ico-half-time')
               p.advantages__info Истечение срока эксплуатации
             .advantages__item
               .advantages__image
-                img(src='http://via.placeholder.com/55x55', alt='')
+                +icon('ico-cycle')
               p.advantages__info Модернизация производства (совершенствование материально-технической базы)
             .advantages__item
-          a.button(href='#') Задать вопрос
+          a.button.open-popup-link(href='#question-popup') Задать вопрос
           p.advantages__under-info
             | Утилизация бытовой техники будет оформлена и выполнена в соответствии с 
             a(href='#') действующим законодательством
@@ -100,25 +100,25 @@ block content
           .button-container
             a.button.open-popup-link(href='#question-popup') Оставить заявку
             p.button-info Получите бесплатную консультацию.
-    .footer-complex
+    .footer-complex.footer-complex--editable
       .container.container--full
         h2 Комплексный подход утилизации включает в себя:
         .footer-complex__grid
           .footer-complex__item
             .footer-complex__image
-              img(src='http://via.placeholder.com/55x55', alt='')
+              +icon('ico-check')
             p.footer-complex__info
               | Проведение экспертизы технического состояния бытовой техники на целесообразность ее дальнейшей эксплуатации или списания.
             p.footer-complex__number 01
           .footer-complex__item
             .footer-complex__image
-              img(src='http://via.placeholder.com/55x55', alt='')
+              +icon('ico-check-list')
             p.footer-complex__info
               | Оформление результатов экспертизы технического состояния бытовой техники:  акт технического состояния (или техническая экспертиза), расчет-обоснование целесообразности списания (или технико-экономическое обоснование).
             p.footer-complex__number 02
           .footer-complex__item
             .footer-complex__image
-              img(src='http://via.placeholder.com/55x55', alt='')
+              +icon('ico-recycle')
             p.footer-complex__info
               | Утилизация бытовой техники (демонтаж, сбор, транспортировка к месту проведения работ, переработка, получение вторичного сырья).
             p.footer-complex__number 03

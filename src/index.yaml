@@ -2,18 +2,22 @@ ProjectTitle: Alpha-eco
 
 PageList:
 - file: homepage.html
-  ready: 80
+  ready: 100
 - file: expertise.html
-  ready: 80
+  ready: 100
 - file: hawle.html
-  ready: 80
+  ready: 100
 - file: spisanie.html
-  ready: 80
+  ready: 100
 - file: standarts.html
-  ready: 80
-- file: teh-exprtise.html
-  ready: 80
+  ready: 100
+- file: teh-expertise.html
+  ready: 100
 - file: utilization-b.html
-  ready: 80
+  ready: 100
 - file: utilization.html
-  ready: 80
+  ready: 100
+- file: contracts.html
+  ready: 100
+- file: contacts.html
+  ready: 100

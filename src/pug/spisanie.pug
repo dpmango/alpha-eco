@@ -19,7 +19,7 @@ block content
       p
         | Спишем, учитывая требования, подготовим заключение и оформим акт списания с бухгалтерского учета.
   .wrapper-main
-    .important
+    .important.important--spisanie
       .container
         h3 Важно!
         p
@@ -32,25 +32,29 @@ block content
           .advantages__grid
             .advantages__item
               .advantages__image
-                img(src='http://via.placeholder.com/55x55', alt='')
-              p.advantages__info Являемся лицензированной компанией;
-            .advantages__item
-              .advantages__image
-                img(src='http://via.placeholder.com/55x55', alt='')
+                +icon('ico-certificate')
               p.advantages__info
-                | Выполняем списание оборудования по всем правилам и требованиям законодательства РФ;
+              | Являемся лицензированной компанией;
             .advantages__item
               .advantages__image
-                img(src='http://via.placeholder.com/55x55', alt='')
-              p.advantages__info Предоставим заключение и акт списания, оформленные должным образом;
+                +icon('ico-truck')
+              p.advantages__info
+              | Выполняем списание оборудования по всем правилам и требованиям законодательства РФ;
             .advantages__item
               .advantages__image
-                img(src='http://via.placeholder.com/55x55', alt='')
-              p.advantages__info Работаем по договору и соблюдаем сроки;
+                +icon('ico-check')
+              p.advantages__info 
+              | Предоставим заключение и акт списания, оформленные должным образом;
             .advantages__item
               .advantages__image
-                img(src='http://via.placeholder.com/55x55', alt='')
-              p.advantages__info Низкая стоимость услуг, за счет высокой автоматизации процессов.
+                +icon('ico-second')
+              p.advantages__info
+              | Работаем по договору и соблюдаем сроки;
+            .advantages__item
+              .advantages__image
+                +icon('ico-like')
+              p.advantages__info
+              | Низкая стоимость услуг, за счет высокой автоматизации процессов.
             .advantages__item
           h3
             | В Вашей компании компьютерная, электронная и другая техника учитывается на балансе, и она отслужила свой срок службы или морально устарела?
@@ -68,21 +72,21 @@ block content
         .footer-complex__grid
           .footer-complex__item
             .footer-complex__image
-              img(src='http://via.placeholder.com/55x55', alt='')
+              +icon('ico-car')
             p.footer-complex__info Наш специалист приедет к Вам в офис;
             p.footer-complex__number 01
           .footer-complex__item
             .footer-complex__image
-              img(src='http://via.placeholder.com/55x55', alt='')
+              +icon('ico-check-list')
             p.footer-complex__info Оформит все необходимые документы;
             p.footer-complex__number 02
           .footer-complex__item
             .footer-complex__image
-              img(src='http://via.placeholder.com/55x55', alt='')
+              +icon('ico-contract')
             p.footer-complex__info
               | Проконсультирует бухгалтера о том, как правильно отразить утилизацию в налоговой отчетности и во внутренней документации компании.
             p.footer-complex__number 03
-    .container.container--full.pre-footer
+    .container.container--full.pre-footer.pre-footer--editable
       .pre-footer__grid
         .pre-footer__item
           h2 Делая для всей планеты, заботишься о самых любимых!
@@ -93,7 +97,8 @@ block content
         .pre-footer__item
           h3 Ждем Ваших заявок и вопросов по телефонам
           p.pre-footer__info
-            | 8 (4742)517-918 или пришлите нам заявку на электронную почту 
+            a(href='tel:84742517918') 8 (4742)517-918 
+            | или пришлите нам заявку на электронную почту 
             a(href='mailto:info@alfa-eco.pro') info@alfa-eco.pro
           .cf
           .button-container

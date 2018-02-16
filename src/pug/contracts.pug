@@ -1,0 +1,83 @@
+---
+title: contracts
+wrapperClass: global_wrapper
+---
+extends shared/_layout
+block content
+
+  // Begin wrapper-main
+  .head-block.head-block--custom.head-block--standarts
+    .container
+      ul.index-page
+        li
+          a(href='#') Главная
+        li
+          a(href='#') Утилизация бытовой техники
+      h1
+        span
+          | Договоры
+      p.contracts-head-info Варианты договоров с компанией ООО «НПО «Альфа-Эко»
+  .wrapper-main.w-oh
+    .documents.documents--editable
+      .container.w-oh
+        .documents__grid
+          .documents__item.documents__item--editable
+            .standart__icon
+              +icon('ico-doc')
+            .stadart__list
+              ul
+                li.standart__list--item
+                  a(href='#')
+                    span
+                      | Договор по «бесплатной» утилизации
+                li.standart__list--item
+                  p.standart__list--info Вы нам не платите
+                li.standart__list--item
+                  p.standart__list--info Мы Вам не платим
+                li.standart__list--item
+                  p.standart__list--info Мы предоставляем пакет отчетных документов по утилизации
+          .documents__item.documents__item--editable
+            .standart__icon
+              +icon('ico-doc')
+            .stadart__list
+              ul
+                li.standart__list--item
+                  a(href='#')
+                    span
+                      | Договор по платной утилизации
+                li.standart__list--item
+                  p.standart__list--info Вы нам платите
+                li.standart__list--item
+                  p.standart__list--info Мы Вам не платим
+                li.standart__list--item
+                  p.standart__list--info Мы предоставляем пакет отчетных документов по утилизации
+          .documents__item.documents__item--editable
+            .standart__icon
+              +icon('ico-doc')
+            .stadart__list
+              ul
+                li.standart__list--item
+                  a(href='#')
+                    span
+                      | Договор по покупке электронного лома для Утилизаторов
+                li.standart__list--item
+                  p.standart__list--info Вы нам не платите
+                li.standart__list--item
+                  p.standart__list--info Мы Вам платим
+                li.standart__list--item
+                  p.standart__list--info Мы предоставляем пакет отчетных документов по утилизации и фактическому количеству полученных драгоценных металлов
+          .documents__item.documents__item--editable
+            .standart__icon
+              +icon('ico-doc')
+            .stadart__list
+              ul
+                li.standart__list--item
+                  a(href='#')
+                    span
+                      | Договор по покупке электронного лома
+                li.standart__list--item
+                  p.standart__list--info Вы нам не платите
+                li.standart__list--item
+                  p.standart__list--info Мы Вам не платим
+                li.standart__list--item
+                  p.standart__list--info Мы предоставляем договор купли-продажи

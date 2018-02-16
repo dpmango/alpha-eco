@@ -23,131 +23,136 @@ block content
        ul
          li
            .image-container
-             img(src='http://via.placeholder.com/55x55', alt='')
+             +icon('ico-like')
            p Полностью безотходное и экологичное производство;
          li
            .image-container
-             img(src='http://via.placeholder.com/55x55', alt='')
+             +icon('ico-circle')
            p
              | Производственные линии по последним европейским стандартам экологической безопасности
          li
            .image-container
-             img(src='http://via.placeholder.com/55x55', alt='')
+             +icon('ico-docs')
            p
              | Предоставляем полную отчетность организациям, при необходимости - фото-документирование
          li
            .image-container
-             img(src='http://via.placeholder.com/55x55', alt='')
+             +icon('ico-certificate')
            p Есть все разрешительные документы и лицензия на осуществление утилизации
          li
            .image-container
-             img(src='http://via.placeholder.com/55x55', alt='')
+             +icon('ico-truck')
            p Имеем собственный автопарк спецтехники, поэтому сами можем вывезти заказ
          li
            .image-container
-             img(src='http://via.placeholder.com/55x55', alt='')
+             +icon('ico-recycle')
            p
              | Работаем с любым типом отходов и можем переработать практически весь исходный материал
-     img.recycle-image(src='images/recycle-2.png', alt='')
+     include ../inline-svg/min/logo-a.svg
    .examples
      .container.container--full
        .container
-         h2
-           | Делая для всей планеты,
-           br
-           | заботишься о самых любимых.
-         .util-container
-           p
-             | ООО «НПО «Альфа-Эко» оказывает полный комплекс услуг по списанию, вывозу и утилизации различного оборудования, в том числе:
-           a.button.open-popup-link(href='#question-popup') Задать вопрос
+         .examples__top
+          h2
+            | Делая для всей планеты,
+            br
+            | заботишься о самых любимых.
+          .util-container
+            p
+              | ООО «НПО «Альфа-Эко» оказывает полный комплекс услуг по списанию, вывозу и утилизации различного оборудования, в том числе:
+            a.button.open-popup-link(href='#question-popup') Задать вопрос
          .examples__grid.examples__grid--utilization
            a.examples__item(href='#')
              .examples__image
-               img(src='http://via.placeholder.com/55x55', alt='')
-             p.examples__info Договор на оказание услуг
+               +icon('ico-tech')
+             p.examples__info Промышленного оборудования
            a.examples__item(href='#')
              .examples__image
-               img(src='http://via.placeholder.com/55x55', alt='')
-             p.examples__info Спецификация (Протокол согласования договорной цены)
+               +icon('ico-print')
+             p.examples__info Оргтехники (компьютеры, мониторы, принтеры, факсы и т.д.)
            a.examples__item(href='#')
              .examples__image
-               img(src='http://via.placeholder.com/55x55', alt='')
-             p.examples__info Акты дефектации (на каждый инвентарный номер) Акт технической экспертизы
+               +icon('ico-w-machine')
+             p.examples__info Бытовой техники (холодильники, плиты, стиральные машины и т.д.)
            a.examples__item(href='#')
              .examples__image
-               img(src='http://via.placeholder.com/55x55', alt='')
-             p.examples__info Сертификаты экспертов-техников, проводивших техническую экспертизу
+               +icon('ico-military')
+             p.examples__info Техники военного назначения
    .examples.examples--editable
      .container
        .examples__grid.examples__grid--utilization
          a.examples__item.examples__item--editable(href='#')
            .examples__image
-             img(src='http://via.placeholder.com/55x55', alt='')
-           p.examples__info Договор на оказание услуг
+             +icon('ico-key')
+           p.examples__info Средств автоматизации
          a.examples__item.examples__item--editable(href='#')
            .examples__image
-             img(src='http://via.placeholder.com/55x55', alt='')
-           p.examples__info Спецификация (Протокол согласования договорной цены)
+             +icon('ico-heart')
+           p.examples__info Медицинского оборудования
          a.examples__item.examples__item--editable(href='#')
            .examples__image
-             img(src='http://via.placeholder.com/55x55', alt='')
-           p.examples__info Акты дефектации (на каждый инвентарный номер) Акт технической экспертизы
+             +icon('ico-magnet')
+           p.examples__info Прочих устройств
    .teh-steps
      .container.container--full
        h2 Как начать утилизацию с ООО «НПО «Альфа-Эко»
        .teh-steps__grid.teh-steps__grid--begin-utilization
          .teh-steps__item
            .teh-steps__image
-             img(src='http://via.placeholder.com/55x55', alt='')
+             +icon('ico-phone')
            p.teh-steps__info
-             | Позвоните и оставьте заявку на утилизацию по телефонам: 8 (4742)517-918, 8 (980)357-35-07
+             | Позвоните и оставьте заявку на утилизацию по телефонам: 
+             a(href='tel:84742517918') 8 (4742)517-918
+             |, 
+             a(href='tel:89803573507') 8 (980)357-35-07
            .teh-steps__number 01
          .teh-steps__item
            .teh-steps__image
-             img(src='http://via.placeholder.com/55x55', alt='')
-           p.teh-steps__info Направьте на электронную почту alfa-eco48@bk.ru
+             +icon('ico-mail')
+           p.teh-steps__info Направьте на электронную почту 
+           a(href='mailto:alfa-eco48@bk.ru') alfa-eco48@bk.ru
            .teh-steps__number 02
          .teh-steps__item
            .teh-steps__image
-             img(src='http://via.placeholder.com/55x55', alt='')
+             +icon('ico-check')
            p.teh-steps__info
-             a(href='#') Оставьте заявку
+             a.open-popup-link(href='#application-popup') Оставьте заявку
              |  на выезд специалистов для составления за Вас перечня утилизации оборудования по телефону
            .teh-steps__number 03
          .teh-steps__item
            .teh-steps__image
-             img(src='http://via.placeholder.com/55x55', alt='')
+             +icon('ico-check-list')
            p.teh-steps__info
              | Проведем БЕСПЛАТНУЮ экспертизу по содержанию в Вашем оборудовании драгоценных металлов и выдадим экспертное заключение.
            .teh-steps__number 04
          .teh-steps__item
            .teh-steps__image
-             img(src='http://via.placeholder.com/55x55', alt='')
+             +icon('ico-doc-star')
            p.teh-steps__info Составим и направим Вам коммерческое предложение по утилизации оборудования. 
            .teh-steps__number 05
          .teh-steps__item
            .teh-steps__image
-             img(src='http://via.placeholder.com/55x55', alt='')
+             +icon('ico-contract')
            p.teh-steps__info Заключим с Вами договор на утилизацию оборудования.
            .teh-steps__number 06
          .teh-steps__item
            .teh-steps__image
-             img(src='http://via.placeholder.com/55x55', alt='')
+             +icon('ico-cyber')
            p.teh-steps__info Если потребуется, проведем демонтаж оборудования.
            .teh-steps__number 07
          .teh-steps__item
            .teh-steps__image
-             img(src='http://via.placeholder.com/55x55', alt='')
+             +icon('ico-car')
            p.teh-steps__info Погрузим и вывезем его к месту проведения работ.
            .teh-steps__number 08
          .teh-steps__item
            .teh-steps__image
-             img(src='http://via.placeholder.com/55x55', alt='')
+             +icon('ico-recycle')
            p.teh-steps__info Разберем, переработаем и утилизируем оборудование.
            .teh-steps__number 09
          .teh-steps__item
            .teh-steps__image
-             img(src='http://via.placeholder.com/55x55', alt='')
+             +icon('ico-ok')
            p.teh-steps__info Оформим отчетные документы по утилизации и доставим их Вам. 
            .teh-steps__number 10
          .teh-steps__item.teh-steps__item--last-child

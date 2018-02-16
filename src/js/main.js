@@ -131,7 +131,7 @@ $(document).ready(function(){
   _document
     .on('click', '.nav-icon', function(){
       $(this).toggleClass('is-open');
-      $('.header-nav').toggleClass('is-acitve')
+      $('.header-nav').toggleClass('is-active')
     })
     .on('click', '.menu-links li a', function(){
       closeMobileMenu();
@@ -139,7 +139,7 @@ $(document).ready(function(){
 
   function closeMobileMenu(){
     $('.nav-icon').removeClass('is-open');
-    $('.header-nav').removeClass('is-acitve')
+    $('.header-nav').removeClass('is-active')
   }
 
   // SET ACTIVE CLASS IN HEADER
@@ -402,9 +402,10 @@ $(document).ready(function(){
   // Masked input
   function initMasks(){
     $("[js-dateMask]").mask("99.99.99",{placeholder:"ДД.ММ.ГГ"});
-    $("input[type='tel'], input[name='phone']").mask("+7 (000) 000-0000", {placeholder: "+7 (___) ___-____"});
+    $("input[type='tel'], input[name='phone']").mask("(000) 000-00-00", {
+      placeholder: "(___) ___-__-__",
+      clearIfNotMatch: true});
   }
-
 
   ////////////
   // SCROLLMONITOR - WOW LIKE
@@ -500,6 +501,8 @@ $(document).ready(function(){
   Barba.Pjax.start();
 
   Barba.Dispatcher.on('newPageReady', function(currentStatus, oldStatus, container, newPageRawHTML) {
+    var newBodyClass = $(newPageRawHTML).find('[js-wrapperToggler]').attr('class')
+    _document.find('[js-setWrapper]').attr('class', '').addClass(newBodyClass);
 
     pageReady();
     closeMobileMenu();

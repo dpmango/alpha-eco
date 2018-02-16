@@ -1,6 +1,6 @@
 ---
 title: hawle
-wrapperClass: global_wrapper hawle-page
+wrapperClass: global_wrapper
 ---
 extends shared/_layout
 block content
@@ -13,9 +13,9 @@ block content
         |  европейское качество с гарантией 10 лет
       p
         | «HAWLE» - проверенный и надежный поставщик для комплексов жилищно-коммунальных хозяйств и водоканалов. Наша компания ООО «НПО «Альфа-Эко» - эксклюзивный дистрибьютор продукции с маркой «HAWLE», «Oz-Kan», «Nova Siria», что подтверждено 
-        a(href='pdf.pdf', target='_blank') дилерским сертификатом.
+        a.open-popup-link(href='#certificatePopup') дилерским сертификатом.
   .wrapper-main
-    .advantages
+    .advantages.advantages--hawle
       .container.container--full
         .container
           .advantages__head
@@ -24,46 +24,49 @@ block content
           .advantages__grid
             .advantages__item
               .advantages__image
-                img(src='http://via.placeholder.com/55x55', alt='')
+                +icon('ico-certificate')
               .advantages__info Только оригинальная арматура от завода-изготовителя;
             .advantages__item
               .advantages__image
-                img(src='http://via.placeholder.com/55x55', alt='')
+                +icon('ico-contract')
               .advantages__info Закупка любой продукции «Хавле» по ценам производителя!
             .advantages__item
               .advantages__image
-                img(src='http://via.placeholder.com/55x55', alt='')
+                +icon('ico-like')
               .advantages__info Высокое качество продукции и длительный срок службы.
             .advantages__item
               .advantages__image
-                img(src='http://via.placeholder.com/55x55', alt='')
+                +icon('ico-ok')
               .advantages__info Официальная гарантия на оригинальную арматуру 10 лет;
             .advantages__item
               .advantages__image
-                img(src='http://via.placeholder.com/55x55', alt='')
+                +icon('ico-tech')
               .advantages__info Практически любое инженерное решение для холодного водоснабжения;
             .advantages__item
               img(src='images/hawle.png', alt='')
-    .container.container--full.pre-footer
-      .pre-footer__grid
-        .pre-footer__item
-          h2 «HAWLE» - популярный бренд на российском рынке уже более 20-ти лет.
-          .pre-footer__grid
-            .pre-footer__image
-              a.image-link(href='images/sertificate-pre-footer.jpg')
-                img(src='images/sertificate-pre-footer.jpg', alt='')
-            .pre-footer__text
-              p.pre-footer__info-p
-                | Компания заслужила всеобщее признание благодаря безупречному качеству изделий, которые можно установить и забыть про них. Мы полностью поддерживаем и разделяем философию «HAWLE» – всегда быть рядом с клиентом! Готовы проконсультировать Вас бесплатно и предложить оптимальное решение именно для Вашей организации.
-              p.pre-footer__info-p
-                | Чтобы узнать подробности, получить консультацию или заказать продукцию компании, позвоните нам или 
-                a.open-popup-link(href='#call-popup1') оставьте заявку на сайте.
-        .pre-footer__item
-          h3 Ждем Ваших заявок и вопросов по телефонам
-          p.pre-footer__info
-            | 8 (4742)517-918 или пришлите нам заявку на электронную почту 
-            a(href='mailto:info@alfa-eco.pro') info@alfa-eco.pro
-          .cf
-          .button-container
-            a.button.open-popup-link(href='#question-popup') Оставить заявку
-            p.button-info Получите бесплатную консультацию.
+    .pre-footer.pre-footer--editable 
+      .container.container--full
+        .pre-footer__grid
+          .pre-footer__item.pre-footer__item--editable
+            h2 «HAWLE» - популярный бренд на российском рынке уже более 20-ти лет.
+            .pre-footer__grid
+              .pre-footer__image
+                a.image-link(href='images/sertificate-pre-footer.jpg')
+                  img(src='images/sertificate-pre-footer.jpg', alt='')
+              .pre-footer__text
+                p.pre-footer__info-p
+                  | Компания заслужила всеобщее признание благодаря безупречному качеству изделий, которые можно установить и забыть про них. Мы полностью поддерживаем и разделяем философию «HAWLE» – всегда быть рядом с клиентом! Готовы проконсультировать Вас бесплатно и предложить оптимальное решение именно для Вашей организации.
+                p.pre-footer__info-p
+                  | Чтобы узнать подробности, получить консультацию или заказать продукцию компании, позвоните нам или 
+                  a.open-popup-link(href='#call-popup1') 
+                    span оставьте заявку на сайте.
+          .pre-footer__item
+            h3 Ждем Ваших заявок и вопросов по телефонам
+            p.pre-footer__info
+              a(href='tel:84742517918') 8 (4742)517-918 
+              | или пришлите нам заявку на электронную почту 
+              a(href='mailto:info@alfa-eco.pro') info@alfa-eco.pro
+            .cf
+            .button-container
+              a.button.open-popup-link(href='#question-popup') Оставить заявку
+              p.button-info Получите бесплатную консультацию.

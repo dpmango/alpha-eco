@@ -1,11 +1,11 @@
 // Begin header
-header.header
+header
   nav.header-nav
-    .fixed-row
-      a(href="#").logo-container
-        img(src='images/logotype.png', alt='')
-      .middle-container
-        ul.menu-links
+    .header__fixed-row
+      a(href="#").header__logo-container
+        img(src='images/logotype.svg', alt='')
+      .header__middle-container
+        ul.header__menu
           li
             a(href='homepage.html') Главная
           li
@@ -18,11 +18,11 @@ header.header
             a(href='utilization.html') Утилизация
           li
             a(href='hawle.html') Hawle
-        .phone-container
-          a.number(href='#') 8 800 123-45-67
+        .header__phone-container
+          a.number(href='tel:88001234567') 8 800 123-45-67
           a.button.open-popup-link(href='#call-popup1') заказать звонок
-    .static-row
-      ul.menu-links
+    .header__static-row
+      ul.header__menu
         li
           a(href='#') Договоры
         li
@@ -31,9 +31,9 @@ header.header
           a(href='#') Стандарты и нормативные документы
         li
           a(href='#') Контакты
-  .mobile-row
+  .header__mobile-row
     a(href='#').logo-container
-      img(src='images/logotype.png', alt='')
+      img(src='images/logotype.svg', alt='')
     .nav-icon
       span
       span

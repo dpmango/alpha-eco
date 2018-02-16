@@ -11,9 +11,9 @@
 
 //
 .global_wrapper
-  font-family: 'HelveticaNeueCyr-Roman', sans-serif, Arial
-  font-weight: normal
-  font-style: normal
+  // font-family: 'HelveticaNeueCyr-Roman', sans-serif, Arial
+  // font-weight: normal
+  // font-style: normal
   overflow: hidden
   height: 100%
   width: 100%
@@ -21,9 +21,12 @@
 .wrapper-main
   // max-width: 1920px;
   // min-width: 1025px;
+  width: 100%
   overflow: hidden
   margin: 0 auto
   padding: 0 10px
+  &.w-oh
+    overflow: visible
 
 .cf
   +cf
@@ -33,8 +36,13 @@
   +cf
   margin: 0 auto
   overflow: hidden
-  max-width: 1170px
+  max-width: 1190px
+  padding-left: 30px
+  padding-right: 30px
   width: 100%
+  +r(768)
+    padding-left: 10px
+    padding-right: 10px
 
   &.w-oh
     overflow: visible
@@ -44,8 +52,6 @@
 
 .mfp-fade.mfp-bg
   opacity: 0
-  -webkit-transition: all 0.15s ease-out
-  -moz-transition: all 0.15s ease-out
   transition: all 0.15s ease-out
 
 .mfp-fade.mfp-bg.mfp-ready
@@ -56,8 +62,6 @@
 
 .mfp-fade.mfp-wrap .mfp-content
   opacity: 0
-  -webkit-transition: all 0.15s ease-out
-  -moz-transition: all 0.15s ease-out
   transition: all 0.15s ease-out
 
 .mfp-fade.mfp-wrap.mfp-ready .mfp-content
@@ -67,6 +71,7 @@
   opacity: 0
 
 input[type=text],
+input[type=email],
 textarea
   background: #f2f2f2
   padding: 15px
@@ -125,6 +130,8 @@ h1
   font-size: 55px
   line-height: 100%
   letter-spacing: -1px
+  padding: 0
+  margin: 0
 
 h2
   font-weight: 700
@@ -132,34 +139,43 @@ h2
   font-size: 48px
   line-height: 1.2
   max-width: 750px
+  padding: 0
+  margin: 0
 
 h3
   font-weight: 700
   color: $dark
   font-size: 30px
   line-height: 1.3
+  padding: 0
+  margin: 0
+
+ul
+  padding: 0
 
 .head-block
   padding: 250px 15px 215px
   background: url(../../images/bg-1.jpg) center center no-repeat
   background-size: cover
   h1
-    width: 70%
-    margin-bottom: 40px
+    width: 80%
+    margin-bottom: 30px
+    line-height: 1.3
   p
     font-weight: 400
     color: white
     font-size: 16px
-    line-height: 1.2
+    line-height: 1.5
   .head-block__button
-    margin-top: 40px
+    margin-top: 50px
     max-width: 240px
     background: $button-dark
     &:hover
       background: $button-green
 
 .recycle
-  padding: 30px 0
+  padding: 20px 35px
+
   .flex-container
     display: inline-flex
     justify-content: space-between
@@ -168,7 +184,7 @@ h3
     font-size: 22px
     font-weight: 400
     color: $dark
-    line-height: 1.4
+    line-height: 1.5
     width: 55%
 
 .realize,
@@ -204,11 +220,8 @@ h3
         // right: -40px;
         bottom: -200px
         right: -200px
-        background: #83cb1d
-        background: -moz-radial-gradient(center, ellipse cover, #83cb1d 0%, #9ce833 100%)
-        background: -webkit-radial-gradient(center, ellipse cover, #83cb1d 0%, #9ce833 100%)
-        background: radial-gradient(ellipse at center, #83cb1d 0%, #9ce833 100%)
-        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#83cb1d', endColorstr='#9ce833', GradientType=1)
+        +background-gradient-radial(#82cb1d, #9de833)
+
     &__info
       color: black
       font-size: 14px
@@ -223,36 +236,48 @@ h3
       transition: all .25s $ease
       position: absolute
       font-size: 58px
-      bottom: 0
+      bottom: -14px
       right: 40px
       opacity: 0.7
-      line-height: 0.5
+      line-height: 1
       padding: 0
     &:nth-child(3)
       .flex-container__item
         border-top: 0
     &__item
       &:hover
+        .flex-container__image
+          img
+            filter: none
         &:before
           bottom: -90px
           right: -40px
         .flex-container__number
           color: white
           opacity: 1
-
+.realize
+  padding: 50px 10px 10px
+.utilization
+  padding-bottom: 0
+  .container
+    margin-bottom: -80px
+  .flex-container__info
+    margin-top: 45px
 .utilization
   .flex-container
     &__image
-      min-height: 60px
-      min-width: 60px
-
+      min-height: 55px
+      min-width: 55px
       position: relative
       z-index: 2
+      font-size: 50px
+      color: #2b2b2b
     &__info
       margin-top: 65px
     &__item
       padding: 25px
       border-right: none
+      // max-height: 210px
       &:last-child
         border-right: 1px solid #f2f0f0
       &:before
@@ -271,7 +296,8 @@ h3
         .flex-container__info
           color: $green
           text-decoration: underline
-
+        .flex-container__image
+          color: #fff
 .utilization__links
   width: calc(100% - 1px)
   padding: 95px 10px 110px
@@ -310,6 +336,7 @@ h3
       max-width: 770px
       width: 100%
       margin-top: 70px
+      box-sizing: content-box
       li
         display: inline-block
         max-width: 190px
@@ -321,6 +348,7 @@ h3
         .image-container
           min-height: 50px
           min-width: 50px
+          font-size: 50px
         p
           margin-top: 30px
           font-size: 14px
@@ -339,6 +367,12 @@ h3
       path, ellipse, polygon
         fill-opacity: 1
         stroke-opacity: 0
+.advantages--main
+  padding: 140px 0
+  ul
+    padding-left: 0
+  .recycle-image
+    width: 33%
 
 
 .we-propose
@@ -364,17 +398,6 @@ h3
     position: relative
     min-width: 255px
     overflow: hidden
-    // img {
-    //     position: absolute;
-    //     left: 0;
-    //     right: 0;
-    //     top: 0;
-    //     bottom: 0;
-    //     margin: auto;
-    //     min-width: 275px;
-    //     height: 100%;
-    //     width: auto;
-    // }
   .we-propose__info
     font-size: 14px
     box-sizing: border-box
@@ -405,14 +428,17 @@ h3
   border-right: 0
   padding: 25px 25px 35px 25px
   position: relative
-  // min-width: 35%;
   max-width: 297px
+  overflow: hidden
   &:last-child
     border-right: solid 1px #e7e7e7
   &:hover
     p.number
       color: #8ecd35
-  img
+    svg
+      color: #b7df7d
+  svg
+    font-size: 50px
     margin: 25px auto 50px
   p
     font-size: 14px
@@ -423,9 +449,9 @@ h3
   p.number
     position: absolute
     right: 30px
-    bottom: 0
+    bottom: -10px
     font-size: 40px
-    line-height: 0.5
+    line-height: 1
     font-weight: 700
     color: #e3e3e4
     transition: all .25s $ease
@@ -441,6 +467,7 @@ h3
   flex: 1
   &:nth-child(1)
     width: 65%
+    padding-right: 30px
 
   &:nth-child(2)
     max-width: 480px
@@ -458,6 +485,9 @@ h3
   line-height: 1.5
   color: $dark
   width: 90%
+.pre-footer__item.pre-footer__item--editable
+  p
+    line-height: 1.75
 
 .pre-footer__item a.button
   max-width: 235px
@@ -468,18 +498,14 @@ h3
 .container-checkbox
   display: block
   position: relative
-  padding-left: 35px
-  margin-bottom: 10px
+  padding: 5px 0 0 35px
   cursor: pointer
   font-size: 14px
   color: black
   font-weight: 400
-  padding-top: 8px
-  -webkit-user-select: none
-  -moz-user-select: none
-  -ms-user-select: none
   user-select: none
   min-height: 25px
+  margin: 20px 0
 
 .container-checkbox a
   color: black
@@ -520,8 +546,6 @@ h3
   height: 12px
   border: solid white
   border-width: 0 2px 2px 0
-  -webkit-transform: rotate(45deg)
-  -ms-transform: rotate(45deg)
   transform: rotate(45deg)
 
 // END input[type=checkbox] popup
@@ -543,7 +567,7 @@ h3
   cursor: pointer
   display: inline-block
   overflow: hidden
-  margin: 15px 0
+  margin: 5px 0 20px
   padding: 0
   border-bottom: 2px dashed $green
 
@@ -554,9 +578,7 @@ h3
   vertical-align: middle
   fill: currentColor
   margin-top: -0.25em
-  /* 4px
   margin-right: 0.25em
-  /* 4px
 
 .inputfile:focus + label,
 .inputfile.has-focus + label,
@@ -569,6 +591,7 @@ h3
   padding: 147px 10px 85px
   background: url(../../images/bg-head.jpg) center center no-repeat
   background-size: cover
+  min-height: 480px
   h1
     font-size: 48px
     max-width: 990px
@@ -582,58 +605,85 @@ h3
     line-height: 1.5
     font-size: 22px
     max-width: 1070px
+    a
+      border-bottom: 1px solid $green
 
-.hawle-page,
-.expertise-page,
-.utilization-b,
-.spisanie-page
-  .advantages
-    padding: 0
-    .container.container--full
-      padding: 90px 10px
-      background: white
-  .advantages__head
+
+// .hawle-page,
+// .expertise-page,
+// .utilization-b,
+// .spisanie-page
+.advantages
+  // padding: 0
+  .container.container--full
+    padding: 80px 10px
+    background: white
+.advantages__head
+  display: flex
+  align-items: center
+  justify-content: space-between
+.advantages__grid
+  display: flex
+  flex-wrap: wrap
+  justify-content: space-between
+  width: 100%
+  margin-top: 40px
+.advantages__item
+  width: 33.333333333333333%
+  border: 1px solid #e7e7e7
+  border-right: none
+  padding: 25px
+  min-height: 200px
+  &:nth-child(n+4)
+    border-top: 0
+  &:last-child
+    border: none
     display: flex
+    justify-content: center
     align-items: center
-    justify-content: space-between
-  .pre-footer
-    margin-top: 50px
-  .advantages__grid
-    display: flex
-    flex-wrap: wrap
-    justify-content: space-between
-    width: 100%
-    margin-top: 40px
-  .advantages__item
-    width: 33.333333333333333%
-    border: 1px solid #e7e7e7
-    border-right: none
-    padding: 25px
-    min-height: 200px
-    &:nth-child(n+4)
-      border-top: 0
-    &:last-child
-      border: none
-      display: flex
-      justify-content: center
-      align-items: center
-      img
-        width: 100%
-    &:nth-child(3)
-      border-left: 0
-    &:nth-child(2),
-    &:nth-child(3),
-    &:nth-child(5)
-      border-right: 1px solid #e7e7e7
-  .advantages__image
-    max-width: 55px
-    max-height: 55px
-  .advantages__info
-    font-size: 14px
-    font-weight: 400
-    color: $dark
-    margin-top: 65px
-    line-height: 1.5
+    img
+      width: 100%
+  &:nth-child(3)
+    border-left: 0
+  &:nth-child(2),
+  &:nth-child(3),
+  &:nth-child(5)
+    border-right: 1px solid #e7e7e7
+.advantages--hawle
+  padding: 0
+  .container
+    padding: 0
+.advantages.advantages--utilization
+  padding: 0
+  h2
+    max-width: 100%
+
+.advantages--utilization .advantages__info
+  margin-top: 45px
+
+.advantages--utilization a.button
+  max-width: 275px
+  margin: 40px 0
+
+.advantages--utilization h3
+  margin: 40px 0
+.advantages__image
+  max-width: 50px
+  max-height: 50px
+  font-size: 50px
+  color: $dark
+.advantages__info
+  font-size: 14px
+  font-weight: 400
+  color: $dark
+  margin-top: 65px
+  line-height: 1.5
+.pre-footer--editable
+  margin-top: 50px
+  h2
+    margin: 15px 0
+  .title-nomargin
+    margin: 0
   .pre-footer__item
     h2
       max-width: 100%
@@ -643,9 +693,19 @@ h3
       margin-bottom: 50px
     .pre-footer__info-p
       margin-top: 45px
-    .pre-footer__image
-      margin: 45px 45px 0 0
-
+  .pre-footer__image
+    margin: 45px 45px 0 0
+.pre-footer__item--ml10
+  padding-left: 10%
+.pre-footer__info-p
+  a
+    font-weight: 500
+    span
+      border-bottom: 1px solid $green
+      font-weight: 500
+    &:hover
+      span
+        border-bottom: 1px solid $dark-green
 a.download-pdf
   max-width: 275px
   display: inline-block
@@ -667,7 +727,7 @@ a.download-pdf
     line-height: 1.5
 
 // BEGIN expertise-page
-.expertise-page
+.advantages--expertise
   h3
     margin-bottom: 0
     span
@@ -697,11 +757,6 @@ a.download-pdf
     line-height: 1
   .advantages__info
     margin-top: 40px
-  .pre-footer
-    margin-top: 30px
-  .pre-footer__item
-    &:first-child
-      margin-left: 10%
   .important
     padding: 250px 10px 70px
 
@@ -732,6 +787,7 @@ ul.index-page
   text-align: left
   display: inline-block
   margin-bottom: 25px
+  padding-left: 0
   li
     display: inline-block
     margin-right: 45px
@@ -779,8 +835,9 @@ ul.index-page
   .container
     ul
       margin-top: 30px
+      padding-left: 0
       li
-        width: 40%
+        width: 37%
         max-width: 330px
         margin: 20px 20px 0 0
         &:nth-child(3)
@@ -793,8 +850,8 @@ ul.index-page
         p
           line-height: 1.5
           margin-top: 0
-  img.recycle-image
-    width: 28%
+  .recycle-image
+    width: 25%
     margin-bottom: 0
     bottom: 60px
 
@@ -845,6 +902,9 @@ ul.index-page
   color: $dark
   line-height: 1.5
   width: 90%
+  span
+    display: inline
+    border-bottom: 1px solid $dark
 
 .advantages__under-info a
   color: $dark
@@ -852,7 +912,10 @@ ul.index-page
   border-bottom: 1px solid #000
 
 .footer-complex
-  padding: 60px 0
+  padding: 60px 0 20px
+
+.footer-complex.footer-complex--editable
+  margin-bottom: 40px
 
 .footer-complex h2
   margin-bottom: 60px
@@ -883,15 +946,10 @@ ul.index-page
     // right: -40px;
     bottom: -200px
     right: -200px
-    background: #83cb1d
-    background: -moz-radial-gradient(center, ellipse cover, #83cb1d 0%, #9ce833 100%)
-    background: -webkit-radial-gradient(center, ellipse cover, #83cb1d 0%, #9ce833 100%)
-    background: radial-gradient(ellipse at center, #83cb1d 0%, #9ce833 100%)
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#83cb1d', endColorstr='#9ce833', GradientType=1)
+    +background-gradient-radial(#82cb1d, #9de833)
   &:hover
     .footer-complex__number
       color: white
-      // opacity: 1;
     &:before
       bottom: -80px
       right: -20px
@@ -901,6 +959,7 @@ ul.index-page
 .footer-complex__image
   max-width: 55px
   max-height: 55px
+  font-size: 55px
 
 .footer-complex__info
   font-size: 14px
@@ -917,10 +976,10 @@ ul.index-page
   transition: all .25s $ease
   position: absolute
   font-size: 40px
-  bottom: 0
+  bottom: -10px
   right: 40px
   // opacity: 0.1;
-  line-height: 0.5
+  line-height: 1
   padding: 0
 
 // END utilization-b
@@ -930,18 +989,14 @@ ul.index-page
     h2
       font-size: 44px
 
-.standarts-page
-  .wrapper-main
-    overflow: visible
-  .head-block--custom
-    position: relative
-    z-index: 1
-  .documents
-    margin-top: -80px
-    position: relative
-    z-index: 2
-    padding-bottom: 40px
-
+.head-block.head-block--custom.head-block--standarts
+  position: relative
+  z-index: 1
+.documents
+  margin-top: -90px
+  position: relative
+  z-index: 2
+  padding-bottom: 40px
 // END spisanie-page
 .documents__grid
   display: flex
@@ -954,7 +1009,7 @@ ul.index-page
   border: 1px solid #e7e7e7
   border-right: 0
   border-bottom: 0
-  padding: 35px
+  padding: 30px 35px
   &:nth-last-child(1),
   &:nth-last-child(2)
     border-bottom: 1px solid #e7e7e7
@@ -965,7 +1020,7 @@ ul.index-page
   max-height: 92px
   height: auto
   width: auto
-  margin-bottom: 15px
+  margin-bottom: 10px
 
 .documents__item a
   display: block
@@ -977,15 +1032,83 @@ ul.index-page
   border-bottom: 1px solid #e7e7e7
   &:last-child
     border-bottom: 0
+  span
+    display: inline
+    border-bottom: 1px solid transparent
+    transition: all .25s $ease
   &:hover
-    color: $green
-    text-decoration: underline
+    span
+      color: $green
+      border-color: $green
+.contracts-head-info
+  margin-bottom: 20px
+.documents__item.documents__item--editable
+  overflow: hidden
+  display: flex
+  position: relative
+  &:before
+    display: block
+    content: ''
+    +css3-prefix(border-radius, 50%)
+    transition: all .25s $ease
+    position: absolute
+    width: 150px
+    height: 150px
+    background: $green
+    // bottom: -90px;
+    // right: -40px;
+    top: -200px
+    left: -200px
+    +background-gradient-radial(#82cb1d, #9de833)
+  &:hover
+    &:before
+      top: -40px
+      left: -30px
+  svg
+    color: $dark
+    font-size: 55px
+    max-height: 55px
+    z-index: 2
+  ul
+    margin: 0 0 0 60px
+.standart__list--item
+  display: block
+  line-height: 1.4
+  a
+    padding: 0
+    color: $dark
+    font-size: 18px
+    font-weight: 500
+.standart__icon
+  position: relative
+  z-index: 2;
+.documents__item.documents__item--editable
+  &:hover
+    .standart__icon
+      svg
+        color: white
+
+.standart__list--info
+  font-size: 14px
+  color: #383838
+  margin-top: 15px
+  padding-left: 12px
+  position: relative
+  &:before
+    position: absolute
+    display: block
+    content: '•'
+    font-size: 12px
+    color: #383838
+    left: 0
+    top: 2px
+
 
 .important.important--teh
   padding: 0
   .container--full
     background: white
-    padding: 70px 0
+    padding: 70px 10px
 
 .important.important--teh p
   font-size: 16px
@@ -1023,9 +1146,13 @@ ul.index-page
   box-sizing: border-box
   width: 25%
   position: relative
+  overflow: hidden
   &:hover
     .teh-steps__number
       color: $button-green
+    .teh-steps__image
+      color: #8ecd35
+
   &:nth-last-child(2)
     border-right: 1px solid #e7e7e7
 
@@ -1041,11 +1168,11 @@ ul.index-page
     display: flex
 
   h3
-    width: 44%
+    width: calc(33% - 30px)
 
 .teh-steps__edit-info
-  width: 56%
-  justify-content: flex-end
+  width: 66%
+  justify-content: center
   text-align: left
   color: $button-green
   font-size: 180px
@@ -1055,17 +1182,27 @@ ul.index-page
   .teh-steps__info
     color: $button-green
     line-height: 1.3
-    margin: -20px 0 0 10px
+    margin: -20px 0 0 30px
   .teh-steps__info--days
     font-size: 150px
     color: $button-green
     margin: 0
+    letter-spacing: -20px
+.teh-steps__item.teh-steps__item--last-child.teh-steps__item--editable
+  h3
+    width: 50%
+  .teh-steps__edit-info
+    padding-right: 0
+    width: 62%
+  .teh-steps__info--days
+    letter-spacing: 0
 
 .teh-steps__image
   margin: 30px auto
   max-height: 55px
   width: auto
   text-align: center
+  font-size: 50px
 
 .teh-steps__info
   font-size: 14px
@@ -1078,10 +1215,10 @@ ul.index-page
   transition: all .25s $ease
   position: absolute
   font-size: 40px
-  bottom: 0
+  bottom: -10px
   right: 40px
   // opacity: 0.1;
-  line-height: 0.5
+  line-height: 1
   padding: 0
 
 .pre-footer--editable
@@ -1118,7 +1255,8 @@ ul.index-page
   h2
     max-width: 100%
     margin-bottom: 50px
-
+.examples__top
+  padding: 0 10px
 .examples__grid
   display: flex
   flex-wrap: no-wrap
@@ -1146,6 +1284,12 @@ ul.index-page
   margin-bottom: 50px
   position: relative
   z-index: 2
+  font-size: 50px
+  color: $dark
+.examples__item
+  &:hover
+    .examples__image
+      color: $button-green
 
 .examples__info
   font-size: 14px
@@ -1175,15 +1319,54 @@ ul.index-page
       // right: -40px;
       top: -200px
       left: -200px
-      background: #83cb1d
-      background: -moz-radial-gradient(center, ellipse cover, #83cb1d 0%, #9ce833 100%)
-      background: -webkit-radial-gradient(center, ellipse cover, #83cb1d 0%, #9ce833 100%)
-      background: radial-gradient(ellipse at center, #83cb1d 0%, #9ce833 100%)
-      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#83cb1d', endColorstr='#9ce833', GradientType=1)
+      +background-gradient-radial(#82cb1d, #9de833)
     &:hover
       &:before
         top: -40px
         left: -30px
+      img
+        filter: none
+      .examples__image
+        color: #fff
+.map
+  margin-top: -180px
+  z-index: 2
+  overflow: visible
+  position: relative
+  margin-bottom: 45px
+.map__container
+  min-height: 600px
+  width: 100%
+  position: relative
+.map__grid
+  display: flex
+  flex-wrap: wrap
+  max-width: 670px
+  padding: 0 60px 50px 60px
+  background: #fff
+  position: absolute
+  left: 0
+  top: 0
+.map__item
+  width: 50%
+  max-width: 300px
+.map__pre-info
+  color: #898989
+  font-size: 14px
+  margin-top: 40px
+  margin-bottom: 15px
+.map__link-phone
+  font-size: 30px
+  color: $dark
+  font-weight: 700
+.map__link-mail
+  font-size: 22px
+  border-bottom: 1px solid $green
+  &:hover
+    border-color: $dark-green
+.map__item--info
+  font-size: 22px
+  color: $dark
 
 .mfp-container.mfp-s-ready.mfp-inline-holder,
 .mfp-wrap,
@@ -1194,11 +1377,24 @@ ul.index-page
 .white-popup
   position: relative
   background: #FFF
-  padding: 90px
+  padding: 70px 90px
   width: 100%
   max-width: 550px
   margin: 0px auto
-
+// .mfp-content
+//   max-height: 98%
+//   height: 100%
+//   top: 1%
+.white-popup--editable
+  max-width: max-content
+  padding: 50px 60px
+  img
+    width: 100%
+    height: auto
+  p
+    font-size: 14px
+    color: #000
+    margin-top: 30px
 .white-popup h3
   margin-bottom: 25px
 
@@ -1223,9 +1419,11 @@ ul.index-page
   cursor: default
   a.button
     margin-top: 50px
-  .phone-container
+  .error-label-container
     position: relative
-    #phone-error
+    #phone-error,
+    #name-error,
+    #email-error
       position: absolute
       display: block
       bottom: calc(100% + 7px)
@@ -1248,701 +1446,50 @@ ul.index-page
         transform: rotate(45deg)
     label.error.valid
       display: none !important
+.phone-container
+  position: relative
+  input
+    padding-left: 33px
+  &:after
+    content: '+7'
+    display: block
+    position: absolute
+    top: 3px
+    bottom: 0
+    margin: auto
+    left: 10px
+    padding: 15px 5px
+    color: rgba(0, 0, 0, 0.5)
+    font-size: 14px
+    line-height: 1.2
+    font-weight: 400
 
+
+.white-popup__title
+  font-size: 30px
 a.button.mfp-close
   color: #fff
 
+button.mfp-close
+  background: url(../images/mfp-close.png) center center no-repeat
 
+.mfp-close
+  width: 24px
+  height: 24px
+  line-height: 44px
+  position: absolute
+  right: 20px
+  top: 20px
+  opacity: 1
+  color: transparent
+  font-size: 0
+  background: url(../images/mfp-close.png) center center no-repeat
+.mfp-close:active
+  top: 20px
+  
 form input[type=text].error,
+form input[type=email].error,
 textarea.error
   border-width: 1px !important
   border-color: #dd2a1b !important
   border-style: solid !important
-
-
-
-
-// * MEDIA PART
-@media screen and (max-width: 1240px)
-  h1
-    font-size: 42px
-  h2
-    font-size: 38px
-  h3
-    font-size: 26px
-  p
-    font-size: 15px
-  header
-    .fixed-row
-      .middle-container
-        ul.menu-links
-          margin-top: 0
-          li
-            a
-              font-size: 14px
-              margin: 0 7px
-        .phone-container
-          padding: 5px 5px 0 5px
-          flex-wrap: wrap
-          justify-content: flex-end
-          padding-right: 15px
-          a.number
-            margin-right: 5px
-            font-size: 18px
-          a.button
-            padding: 8px
-            width: auto
-    .static-row
-      ul.menu-links
-        li
-          a
-            font-size: 14px
-            margin: 0 15px 0 0
-  .teh-steps__item.teh-steps__item--last-child
-    width: 100%
-    h3
-      width: 50%
-  .teh-steps__edit-info
-    width: 50%
-
-@media screen and (max-width: 1024px)
-  h1
-    font-size: 39px
-  h2
-    font-size: 34px
-  h3
-    font-size: 23px
-  .how-we-work__item
-    padding: 15px 15px 25px 15px
-  .pre-footer__item
-    &:nth-child(2)
-      a
-        float: none
-      p.button-info
-        padding-top: 5px
-        margin-left: 5px
-  .we-propose .we-propose__image
-    min-width: 180px
-  .we-propose .we-propose__info
-    padding: 15px
-  .utilization--top--editable
-    .container
-      ul
-        li
-          width: 50%
-          max-width: 275px
-          &:nth-child(3),
-          &:nth-child(6)
-            margin-right: 20px
-          p
-            margin-top: 25px
-
-@media screen and (max-width: 992px)
-  /*There goes query
-
-@media screen and (max-width: 768px)
-  h1
-    font-size: 36px
-  h2
-    font-size: 28px
-  h3
-    font-size: 20px
-  p
-    font-size: 14px
-  .wrapper-main
-    padding: 0 10px
-  .head-block
-    padding: 150px 10px 100px
-    h1
-      width: 100%
-    p
-      font-size: 14px
-  ul.index-page
-    display: none
-  .footer
-    .container
-      padding: 20px 0
-    padding: 20px 10px
-    &__info
-      width: 100%
-    &__links
-      margin-top: 15px
-  header
-    .header-nav
-      position: fixed
-      top: -1000px
-      width: 100%
-      transition: all .25s $ease
-      border-bottom: 1px solid #e7e7e7
-      &.is-active
-        top: 54px
-    .static-row,
-    .fixed-row
-      display: block
-      position: static
-      margin-top: 0
-      top: 0
-      .logo-container
-        display: none
-      .middle-container
-        flex-wrap: wrap
-        padding-bottom: 10px
-        border-bottom: 0
-        ul.menu-links
-          flex-wrap: wrap
-          li
-            display: block
-            margin: 0
-            padding: 10px
-            width: 100%
-            a
-              margin: 0
-        .phone-container
-          flex-wrap: wrap
-          justify-content: flex-start
-          padding: 10px
-          border: 1px solid #e7e7e7
-          border-right: 0
-          border-left: 0
-          max-width: 100%
-          a.number
-            display: block
-            width: 100%
-            font-size: 16px
-            margin-bottom: 10px
-    .static-row
-      background: white
-      ul.menu-links
-        flex-wrap: wrap
-        justify-content: flex-start
-        text-align: left
-        li
-          display: block
-          width: 100%
-          padding: 0
-          a
-            padding: 10px
-            margin: 0
-            color: $dark
-    .mobile-row
-      display: flex
-      align-items: center
-      justify-content: space-between
-      padding: 5px 10px
-      background: #161e21
-      position: fixed
-      top: 0
-      width: 100%
-      .logo-container
-        img
-          max-height: 40px
-          width: auto
-    .nav-icon
-      display: block
-      width: 30px
-      height: 23px
-      -webkit-transform: rotate(0deg)
-      transform: rotate(0deg)
-      -webkit-transition: .5s ease-in-out
-      transition: .5s ease-in-out
-      cursor: pointer
-      span
-        display: block
-        position: absolute
-        height: 4px
-        width: 100%
-        background: #fff
-        border-radius: 9px
-        opacity: 1
-        left: 0
-        -webkit-transform: rotate(0deg)
-        transform: rotate(0deg)
-        -webkit-transition: .25s ease-in-out
-        transition: .25s ease-in-out
-        &:nth-child(1)
-          top: 0px
-        &:nth-child(2),
-        &:nth-child(3)
-          top: 9px
-        &:nth-child(4)
-          top: 18px
-      &.is-open span:nth-child(1)
-        top: 18px
-        width: 0%
-        left: 50%
-      &.is-open span:nth-child(2)
-        -webkit-transform: rotate(45deg)
-        transform: rotate(45deg)
-      &.is-open span:nth-child(3)
-        -webkit-transform: rotate(-45deg)
-        transform: rotate(-45deg)
-      &.is-open span:nth-child(4)
-        top: 18px
-        width: 0%
-        left: 50%
-  .flex-container
-    display: flex
-    justify-content: flex-start
-    flex-wrap: wrap
-  .recycle
-    padding: 15px 0
-    .flex-container
-      display: flex
-      justify-content: flex-start
-      flex-wrap: wrap
-    p
-      font-size: 16px
-      width: 100%
-    img
-      width: 60%
-      margin: 0 auto
-      max-width: 330px
-  .realize,
-  .utilization
-    padding: 25px 10px
-    h2
-      margin: 25px 0 15px
-    .flex-container
-      &__item
-        display: flex
-        width: 100%
-        border-bottom: 0
-        padding: 15px 35px 15px 15px
-        min-height: 150px
-        &:nth-child(1)
-          border-right: 1px solid #f2f0f0
-      &__number
-        right: 20px
-      &:nth-child(3)
-        .flex-container__item
-          border-top: 1px solid #f2f0f0
-        .flex-container__item:last-child
-          border-bottom: 1px solid #f2f0f0
-  .utilization
-    .flex-container
-      &__item
-        padding: 15px
-        width: 50%
-        border-right: 1px solid #f2f0f0
-        border-bottom: 1px solid #f2f0f0
-        min-height: 170px
-        &:nth-child(2n+1)
-          border-right: none
-        &:hover
-          &:before
-            left: -40px
-            top: -50px
-      &__info
-        margin-top: 35px
-      &:nth-child(3)
-        .flex-container__item
-          border-top: none
-      &:nth-child(2)
-        .flex-container__item
-          border-top: none
-        .flex-container__item
-          &:nth-child(1),
-          &:nth-child(2)
-            border-top: 1px solid #f2f0f0
-  .utilization__links
-    padding: 40px 10px
-  .utilization__title
-    font-size: 18px
-  .utilization__flex
-    display: flex
-    justify-content: flex-start
-    flex-wrap: wrap
-  .utilization__link
-    width: 100%
-    margin: 10px auto
-  .advantages
-    padding: 40px 0
-    text-align: center
-    h2
-      text-align: left
-    .container
-      ul
-        margin-top: 20px
-        text-align: left
-        li
-          margin: 20px
-
-          &:nth-child(3)
-            margin: 20px
-          p
-            margin-top: 20px
-    // .recycle-image {
-    // 	width: 50%;
-    // 	position: static;
-    // 	margin-right: 0 auto;
-    // }
-  .how-we-work
-    padding: 40px 0
-  .how-we-work h2
-    margin-bottom: 20px
-  .how-we-work__grid
-    display: flex
-    flex-flow: column
-  .how-we-work__item
-    flex-wrap: wrap
-    width: 100%
-    max-width: 100%
-    border-right: 1px solid #e7e7e7
-    border-bottom: 0
-    padding: 10px 10px 30px 10px
-    align-items: center
-    &:last-child
-      border-bottom: 1px solid #e7e7e7
-    img
-      margin: 0 auto
-      margin-right: 10px
-      float: left
-  .how-we-work__item p.number
-    right: 15px
-  .pre-footer
-    padding: 20px 0
-  .pre-footer__grid
-    flex-flow: column
-  .pre-footer__item
-    width: 100%
-    &:nth-child(1),
-    &:nth-child(2)
-      max-width: 100%
-      width: 100%
-    &:nth-child(2)
-      h3
-        margin-top: 25px
-  .pre-footer__item p
-    width: 100%
-    font-size: 14px !important
-  .pre-footer__item h3
-    margin-bottom: 15px
-  .white-popup
-    padding: 40px 10px
-  .we-propose
-    padding: 40px 10px 10px 10px
-    h2
-      margin-bottom: 20px
-  .we-propose .we-propose__grid-item
-    width: 100%
-  .we-propose .we-propose__image
-    min-width: 150px
-  .we-propose .we-propose__info
-    padding: 10px
-  .we-propose__grid-item:nth-child(n+2)
-    .we-propose__info
-      border-top: 0
-  // BEGIN hawle-page
-  .head-block--custom
-    padding: 100px 10px 40px
-    h1
-      font-size: 36px
-      margin-bottom: 30px
-  .hawle-page,
-  .expertise-page,
-  .utilization-b,
-  .spisanie-page
-    .advantages
-      .container.container--full
-        padding: 25px 10px
-      .advantages__grid
-        margin-top: 20px
-    .advantages__item
-      padding: 15px
-      width: 50%
-      min-height: 170px
-      &:nth-child(3)
-        border-left: 1px solid #e7e7e7
-        border-right: 0
-        border-top: 0
-      &:nth-child(4)
-        border-right: 1px solid #e7e7e7
-      &:nth-child(5)
-        border-right: 0
-      &:last-child
-        border-left: 1px solid #e7e7e7
-    .advatages__info
-      margin-top: 25px
-    .pre-footer
-      margin-top: 10px
-    .pre-footer__item
-      .pre-footer__info,
-      .pre-footer__info-p
-        margin-top: 15px
-      .pre-footer__image
-        margin: 15px 15px 0 0
-      &:nth-child(2) p
-        padding: 0
-        margin: 15px 0
-  .important
-    padding: 20px 0
-    p
-      margin-top: 25px
-      font-size: 18px
-  .important.important--teh
-    .container--full
-      padding: 35px 10px
-  .title--mt70
-    margin-top: 35px
-  .expertise-page
-    .advantages__head
-      text-align: left
-      font-size: 16px
-    .advantages__item
-      width: 100%
-      text-align: left
-      border: 1px solid #e7e7e7
-      border-bottom: 0
-      &:nth-child(3)
-        border: 1px solid #e7e7e7
-      &:last-child
-        padding: 25px
-        width: 100%
-        border: 0
-        .advantages__info
-          font-size: 14px
-    .advantages__grid
-      margin-bottom: -120px
-    .advantages__info--title
-      font-size: 60px
-    .advantages__info
-      margin-top: 25px
-    .pre-footer__item
-      &:first-child
-        margin-left: 0
-      .pre-footer__info-p
-        margin-top: 15px
-    .important
-      padding: 140px 10px 20px
-  .utilization-b
-    .pre-footer__item
-      .pre-footer__info,
-      .pre-footer__info-p
-        margin-top: 15px
-      .pre-footer__image
-        margin: 15px 15px 0 0
-      &:first-child
-        margin-left: 0
-      &:nth-child(2) p
-        padding: 0
-        margin: 15px 0
-  .utilization--top
-    &.container
-      padding: 25px 0
-    .container
-      ul
-        margin-top: 0
-        li
-          width: 100% !important
-          max-width: 100%
-          margin: 15px 0 0 0
-          &:nth-child(3)
-            margin: 15px 0 0 0
-          h3
-            font-size: 16px
-            margin-top: 15px
-          p
-            margin-top: 0
-    img.recycle-image
-      width: 50%
-      position: static
-      margin: 15px auto 0
-  .utilization--top--editable
-    .container
-      ul
-        li
-          p
-            margin-top: 15px
-  .advantages--utilization
-    .advantages__item
-      text-align: left
-      min-height: 150px
-    .advantages__info
-      margin-top: 15px
-  .advantages--utilization a.button
-    margin: 15px 0
-    text-align: left
-  .advantages__under-info
-    text-align: left
-    font-size: 18px
-    width: 100%
-  .registration
-    .container--full
-      padding: 40px 10px
-      h2
-        margin-bottom: 25px
-      p
-        font-size: 14px
-      .registration__grid
-        flex-wrap: wrap
-      a.button
-        margin-left: 0
-        margin-top: 25px
-  .footer-complex
-    padding: 20px 0
-    h2
-      margin-bottom: 20px
-  .footer-complex__grid
-    flex-wrap: wrap
-  .footer-complex__item
-    width: 100%
-    padding: 15px
-    min-height: 150px
-    border: 1px solid #e7e7e7
-    border-bottom: 0
-    &:last-child
-      border-bottom: 1px solid #e7e7e7
-  .footer-complex__info
-    margin-top: 25px
-  .advantages--utilization h3
-    text-align: left
-    margin: 20px 0
-  .advantages__under--grid
-    flex-wrap: wrap
-  .advantages__under--item
-    width: 100%
-    padding: 0
-    // margin-top: 20px;
-    &:first-child
-      padding-right: 0
-    &:last-child
-      padding-left: 0
-  .advantages__under-info
-    font-size: 16px
-  .spisanie-page
-    .footer-complex
-      h2
-        font-size: 28px
-  .standarts-page
-    .documents
-      margin-top: -30px
-      padding-bottom: 10px
-  .documents__grid
-    flex-wrap: wrap
-    border: 1px solid #e7e7e7
-  .documents__item
-    padding: 15px
-    width: 100%
-    border: 0
-    border-bottom: 1px solid #e7e7e7
-    &:nth-child(even)
-      border-right: 0
-    &:last-child
-      border-bottom: 0
-    img
-      margin-bottom: 5px
-    a
-      padding: 8px 0
-  .teh-steps
-    padding: 40px 0 20px
-    h2
-      margin-bottom: 20px
-  .teh-steps__item
-    width: 100%
-    padding: 15px
-    min-height: 150px
-    border-right: 1px solid #e7e7e7
-    border-bottom: 0
-    &:nth-last-child(2)
-      border-bottom: 1px solid #e7e7e7
-  .teh-steps__image
-    text-align: left
-    margin: 0 0 15px 0
-  .teh-steps__item.teh-steps__item--last-child
-    width: 100%
-    flex-wrap: wrap
-    h3,
-    .teh-steps__edit-info
-      width: 100%
-      justify-content: flex-start
-      padding: 0
-      .teh-steps__info--days
-        font-size: 100px
-  .teh-steps__grid.teh-steps__grid--begin-utilization
-    .teh-steps__item
-      width: 100%
-      &:last-child
-        width: 100%
-        align-items: center
-  .pre-footer--editable
-    .pre-footer__item
-      .pre-footer__info,
-      .pre-footer__info-p
-        margin-top: 15px
-      .pre-footer__image
-        margin: 15px 15px 0 0
-      &:nth-child(2) p
-        padding: 0
-        margin: 15px 0
-  .examples
-    h2
-      margin-bottom: 30px
-    .container--full
-      padding: 40px 10px 0 10px
-  .examples.examples--editable
-    padding: 0 10px
-  .examples__grid
-    flex-wrap: wrap
-  .examples__item
-    width: 100%
-    min-height: 150px
-    border-right: 1px solid #e7e7e7
-    border-bottom: 0
-    padding: 15px
-    &.examples__item--editable
-      border-bottom: 1px solid #e7e7e7
-  .examples__image
-    margin-bottom: 15px
-  .util-container
-    display: flex
-    flex-wrap: wrap
-    margin-bottom: 30px
-    p
-      font-size: 18px
-    a.button
-      margin-top: 30px
-  .examples__grid.examples__grid--utilization
-    .examples__item
-      &:before
-        width: 120px
-        height: 120px
-      &:hover
-        &:before
-          top: -30px
-          left: -20px
-  .examples--editable
-    .examples__grid.examples__grid--utilization
-      .examples__item
-        &:first-child
-          border-top: 1px solid #e7e7e7
-
-@media screen and (max-width: 660px)
-  .advantages
-    .container
-      ul
-        li
-          width: 50%
-    .recycle-image
-      width: 50%
-      position: static
-      margin: 0 auto
-      margin-bottom: -55px
-  .hawle-page
-    .advantages__head
-      flex-wrap: wrap
-      a.button
-        margin-top: 15px
-  .white-popup
-    width: 90%
-    padding: 60px 30px
-
-@media screen and (max-width: 480px)
-  .advantages
-    .container
-      ul
-        li
-          width: 100%
-          max-width: 100%
-          margin: 10px 0
-          &:nth-child(3)
-            margin: 10px 0
