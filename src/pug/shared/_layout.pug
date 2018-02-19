@@ -6,22 +6,21 @@ html(lang="ru")
 
   body
     // place where pjax bindings happen's
-    #barba-wrapper
-      div(js-setWrapper class=wrapperClass)
-        block header
-          include ../components/_header
-      
-        // what should be changed with every pjax
-        .page
-          .page__content
-            block content
-              
-            div(js-wrapperToggler class=wrapperClass)
+    #barba-wrapper(js-setWrapper class=wrapperClass)
+      block header
+        include ../components/_header
+    
+      // what should be changed with every pjax
+      .page
+        .page__content
+          block content
+            
+          div(js-wrapperToggler class=wrapperClass)
 
-          block footer
-            include ../components/_footer
-          
-        block popups
-          include ../components/_popups
-        block scripts
-          include _scripts
+        block footer
+          include ../components/_footer
+        
+      block popups
+        include ../components/_popups
+      block scripts
+        include _scripts
