@@ -431,18 +431,18 @@ $(document).ready(function(){
   }
 
   function svgSetOffset(){
-    var paths = $('.js-scrollmonitor').find('path');
+    var paths = $('.js-scrollmonitor').find('path.draw-line');
     paths.each(function(i,path){
       var $path = $(path);
       var pathL = Math.floor(path.getTotalLength()) + 1
       $path.css("stroke-dasharray", pathL)
       $path.css("stroke-dashoffset", pathL)
-      $path.attr('stroke', '#262e39').attr('stroke-width', .3)
+      $path.attr('stroke', '#262e39').attr('stroke-width', .4)
     })
   }
 
   function animateSvg(el, direction){
-    var paths = $(el).find('path');
+    var paths = $(el).find('path.draw-line.path1');
     paths.each(function(i,path){
       var $path = $(path);
       var pathL = Math.floor(path.getTotalLength()) + 1
@@ -450,9 +450,24 @@ $(document).ready(function(){
         targets: path,
         strokeDashoffset: [pathL, 0],
         easing: 'easeInOutSine',
-        duration: 1000,
+        duration: 600,
         // delay: function(el, i) { return i * 250 },
         direction: 'alternate',
+        loop: false
+      });
+    })
+    var paths2 = $(el).find('path.draw-line.path2');
+    paths2.each(function(i,path){
+      var $path = $(path);
+      var pathL = Math.floor(path.getTotalLength()) + 1
+      anime({
+        targets: path,
+        strokeDashoffset: [pathL, 0],
+        easing: 'easeInOutSine',
+        duration: 500,
+        delay: 500,
+        // delay: function(el, i) { return i * 250 },
+        // direction: 'alternate',
         loop: false
       });
     })

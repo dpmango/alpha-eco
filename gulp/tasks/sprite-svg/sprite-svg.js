@@ -95,5 +95,6 @@ gulp.task('svg:minify', function() {
 
 
 gulp.task('sprite:svg:watch', function() {
+    gulp.watch(config.src.root + '/inline-svg/*.svg', ['svg:minify', ['pug']]);
     gulp.watch(config.src.iconsSvg + '/*.svg', ['sprite:svg']);
 });
