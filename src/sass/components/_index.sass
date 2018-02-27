@@ -538,6 +538,10 @@ ul
 
 .container-checkbox input:checked ~ .checkmark:after
   display: block
+.checkmark
+  outline: none
+.checkmark.error
+  outline: 1px solid red
 
 .container-checkbox .checkmark:after
   left: 9px
@@ -657,6 +661,32 @@ ul
   padding: 0
   h2
     max-width: 100%
+  .advantages__grid
+    justify-content: flex-start
+  .advantages__item
+    &:nth-child(2),
+    &:nth-child(3),
+    &:nth-child(5)
+      border-right: 0
+    &:last-child
+      border: 1px solid #e7e7e7
+      border-top: 0
+      display: block
+      align-items: flex-start
+      justify-content: flex-start
+    &:nth-child(3n+3)
+      border-right: 1px solid #e7e7e7
+      border-left: 0
+    &:nth-child(-n+3)
+      border-top: 1px solid #e7e7e7
+    &:nth-child(2n+2)
+      border-left: 0
+      border-left: 1px solid #e7e7e7
+    &:nth-child(2n+3)
+      border-left: 0
+      border-left: 1px solid #e7e7e7
+
+
 
 .advantages--utilization .advantages__info
   margin-top: 45px
@@ -1423,7 +1453,8 @@ ul.index-page
     position: relative
     #phone-error,
     #name-error,
-    #email-error
+    #email-error,
+    #personal-info-error
       position: absolute
       display: block
       bottom: calc(100% + 7px)
@@ -1446,6 +1477,12 @@ ul.index-page
         transform: rotate(45deg)
     label.error.valid
       display: none !important
+    #personal-info-error
+      right: auto
+      left: 0
+      &:after
+        right: auto
+        left: 7px
 .phone-container
   position: relative
   input

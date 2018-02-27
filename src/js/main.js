@@ -334,8 +334,17 @@ $(document).ready(function(){
           }
         }
       });
+
       $(this).on('submit', function() {
         var action = $(this).attr('action');
+
+        if ( $('#personal-info-error').hasClass("error") ) {
+            $('.checkmark').addClass('error');
+        }
+
+        if ( $('#personal-info-error').hasClass("error valid") ) {
+            $('.checkmark').removeClass('error');
+        }
 
         if (!$(this).find('input.error').length) {
           $.post(action, $(this).serialize(), function() {
@@ -352,6 +361,13 @@ $(document).ready(function(){
       })
     })
   }
+
+  _document
+    .on('click', '.container-checkbox', function(){
+      if ( $("input[name=personal-info]:checked") ) {
+          $('.checkmark').removeClass('error');
+      }
+    })
 
   // focus toggler
   function focusToggler(){

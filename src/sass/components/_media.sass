@@ -660,6 +660,28 @@
   .advantages--utilization h3
     text-align: left
     margin: 20px 0
+  .advantages.advantages--utilization
+    .advantages__grid
+      justify-content: flex-start
+    .advantages__item
+      &:last-child
+        border: 1px solid #e7e7e7
+        border-top: 0
+        display: block
+        align-items: flex-start
+        justify-content: flex-start
+      &:nth-child(2n+3)
+        border-right: 1px solid #e7e7e7
+      &:nth-child(3)
+        border-top: 0
+      &:nth-child(-n+2)
+        border-top: 1px solid #e7e7e7
+      &:nth-child(2n+2)
+        border-right: 1px solid #e7e7e7
+      &:nth-child(2n+1)
+        border-right: 0
+      &:last-child
+        border-right: 1px solid #e7e7e7
   .advantages__under--grid
     flex-wrap: wrap
   .advantages__under--item
@@ -785,6 +807,7 @@
     margin-bottom: 30px
     p
       font-size: 18px
+      max-width: 100%
     a.button
       margin-top: 30px
   .examples__grid.examples__grid--utilization
